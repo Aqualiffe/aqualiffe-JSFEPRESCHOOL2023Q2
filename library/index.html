@@ -31,37 +31,100 @@
             </div>
         </header>
         <aside class="Welcome">
-            <div class="welcome">
+            <div class="welcome-img">
                 <div class="gradient">
-                    <div class="welcom-text">
-                        
+                    <div class="welcome-content">
+                        <div class="welcom-text">
+                            Welcome&nbsp;<br/>to the Brooklyn Library
+                        </div>
                     </div>
                 </div>
             </div>
-            Картинка и текст
         </aside>
-        <main>
+        <main class="main">
             <section class="About">
-                <h2 id="About">About</h2>
+                <section class="section-title">
+                    <h2 id="About">About</h2>
+                    <div class="h2-line"></div>
+                </section>
+                <p class="text-about">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
+                <div class="about-gallery">
+                    <img src="./assets/img/photo1-about.jpg" alt="Photo The Brooklyn Library" class="img_about-gallery">
+                    <img src="./assets/img/photo2-about.jpg" alt="Photo The Brooklyn Library" class="img_about-gallery">
+                    <img src="./assets/img/photo3-about.jpg" alt="Photo The Brooklyn Library" class="img_about-gallery">
+                </div>
+                <div class="carousel-wrapper">
+                    <div class="carousel_pagination">
+                        <div class="box">
+                            <span class="dot active"></span>
+                        </div>
+                        <div class="box">
+                            <span class="dot"></span>
+                        </div>
+                        <div class="box">
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
             </section>
             <section class="Favorites">
-                <h2 id="Favorites">Favorites</h2>
-                <p>Текст</p>
-                <section>
-                    выбор сезона
+                <section class="section-title">
+                    <h2 id="Favorites">Favorites</h2>
+                    <div class="h2-line"></div>
+                </section>
+                
+                <h3>Pick favorites of season</h3>
+                <section class="seasons">
+                    <div class="group-seasons">
+                        <label for="radio-winter" class="filter-seasons">
+                            <input type="radio" id="radio-winter" class="radio-button" name="content-seasons" checked="checked">
+                            <span class="radio"></span>                 
+                            <span class="seasons-radio-text">Winter</span>
+                        </label>
+                    </div>
+                    <div class="group-seasons">
+                        <label for="radio-spring" class="filter-seasons">
+                            <input type="radio" id="radio-spring" class="radio-button" name="content-seasons">
+                            <span class="radio"></span>
+                            <span class="seasons-radio-text">Spring</span>
+                        </label>
+                    </div>
+                    <div class="group-seasons">
+                        <label for="radio-summer" class="filter-seasons">
+                            <input type="radio" id="radio-summer" class="radio-button" name="content-seasons">
+                            <span class="radio"></span>
+                            <span class="seasons-radio-text">Summer</span>
+                        </label>
+                    </div>
+                    <div class="group-seasons">
+                        <label for="radio-autumn" class="filter-seasons">
+                            <input type="radio" id="radio-autumn" class="radio-button" name="content-seasons">
+                            <span class="radio"></span>
+                            <span class="seasons-radio-text">Autumn</span>
+                        </label>
+                    </div>
                 </section>
                 <section>
                     карточки
                 </section>
             </section>
             <section class="CofeeShop">
-                <h2 id="CofeeShop">Coffee Shop</h2>
+                <section class="section-title">
+                    <h2 id="CofeeShop">Coffee Shop</h2>
+                    <div class="h2-line"></div>
+                </section>
             </section>
             <section class="Contacts">
-                <h2 id="Contacts">Our Contacts</h2>
+                <section class="section-title">
+                    <h2 id="Contacts">Our Contacts</h2>
+                    <div class="h2-line"></div>
+                </section>
             </section>
             <section class="LibraryCard">
-                <h2 id="LibraryCard">Digital Library Cards</h2>
+                <section class="section-title">
+                    <h2 id="LibraryCard">Digital Library Cards</h2>
+                    <div class="h2-line"></div>
+                </section>
             </section>
         Основное содержимое страницы
         </main>

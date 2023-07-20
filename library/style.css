@@ -1,5 +1,6 @@
 * {
     font-family: "Inter", Verdana, sans-serif;
+    box-sizing: border-box;
 }
 body {
     margin: 0;
@@ -8,11 +9,53 @@ body {
     flex-direction: column;
     align-items: center;
 }
+h1, h2, .welcom-text {
+    font-family: "Forum", Verdana, sans-serif;
+}
+
+ul {
+    padding: 0px;
+}
+
 h1 {
-    font-family: "Forum";
     font-weight: 400;
     font-size: 30px;
     letter-spacing: 0.60px;
+}
+
+h2 {
+    color: #0C0C0E; 
+    font-size: 40px;    
+    font-weight: 400; 
+    line-height: 40px; 
+    letter-spacing: 2px;
+    margin: 20px auto 19px;
+}
+
+.h2-line {
+    background: #0C0C0E;
+    width: 50px;
+    height: 1px;
+    margin: 0 auto;
+}
+
+h3 {
+    color: black;
+    font-size: 20px;
+    font-family: "Inter";
+    font-weight: 700;
+    word-wrap: break-word;
+    margin: 0 0 40px 0;
+}
+
+.main, .main-header, .main-footer {
+    padding: 0 20px;
+}
+.section-title {
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    margin-bottom: 40px;
 }
 
 .wrapper {
@@ -29,33 +72,27 @@ h1 {
     height: 90px;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
 }
 
 .menu-head {
     display: flex;
-    align-items: center;
-    
+    align-items: center;    
 }
 
 .menu {
     display: flex;
     align-items: center;
-    margin-right: 40px;
+    padding: 0;
 }
 
-.menu > ul {
-    /*padding: 20;*/
- }
-
-.menu li{
+.menu li {
     display: inline-block;
     vertical-align: top;
-    margin-right: 30px;
-
+    margin-right: 29px;
 }
 
-.menu a{
+.menu a {
+    padding: 0px;
     font-size: 20px;
     text-decoration: none;
     color: #fff;
@@ -64,14 +101,176 @@ h1 {
     word-wrap: break-word;
 }
 
-.ico_profile {
-    background-image: url(./assets/img/icon_profile.svg);
-    width: 28px;
-    height: 28px;
-    display: inline-block;
-
-}
-
 .menuElement:last-child {
     margin-right: 0px;
+}
+
+.user-account {
+    width: 28px;
+    height: 28px;
+    margin: 31px 0px 31px 40px;
+}
+
+.ico_profile {
+    background-image: url(./assets/img/icon_profile.svg);
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+}
+
+.Welcome {
+    width: 1440px;
+    height: 600px;
+}
+.welcome-img {
+    background-image: url(./assets/img/welcome.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.gradient {
+    width: 1440px; 
+    height: 600px; 
+    background: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0%, rgba(18.33, 18.33, 21.25, 0.10) 50%);
+    display: flex;
+}
+
+.welcome-content {
+    width: 600px; 
+    height: 220px; 
+    padding: 35px 40px;
+    background: #0C0C0E; 
+    margin-top: 220px;
+}
+.welcom-text {
+    width: 520px; 
+    text-align: center; 
+    color: white; 
+    font-size: 40px; 
+    font-weight: 400; 
+    text-transform: uppercase; 
+    line-height: 50px; 
+    letter-spacing: 3px; 
+    word-wrap: break-word;
+}
+
+.text-about {
+    width: 100%; 
+    text-align: center; 
+    color: black; 
+    font-size: 20px;  
+    font-weight: 400; 
+    line-height: 40px; 
+    word-wrap: break-word
+}
+
+.about-gallery {
+    display: flex;
+    justify-content: space-between
+}
+
+.img_about-gallery {
+    width: 450px; 
+    height: 560px;
+}
+
+.carousel-wrapper {
+    height: 96px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel_pagination {
+    display: flex;
+    width: 78px;
+    height: 26px;
+}
+
+.box {
+    width: 26px;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #0C0C0E; 
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #BB945F;
+}
+
+.seasons {
+    display: flex;
+    width: 700px;
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+    word-wrap: break-word;
+    justify-content: space-between;
+}
+
+.group-seasons {
+    padding: 5px;
+}
+
+.filter-seasons {
+    display: flex;
+    flex-direction: row;
+    height: 28px;
+    position: relative;
+    align-items: center;
+}
+
+.filter-seasons input {
+    width: 0;
+	height: 0;
+	position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.seasons-radio-text {
+    padding-left: 20px;
+}
+
+.radio {
+    display: inline-block;
+    position: relative;
+    width: 17px;
+    height: 17px;
+    border-radius: 9999px; 
+    border: 2px black solid;
+    vertical-align: text-top;
+}
+
+.radio::before {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: #000;
+    border-radius: 9999px;
+    position: absolute;
+	left: 50%;
+	top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.radio-button:checked + .radio::before {
+    display: block;
+}
+
+.filter-seasons input:checked + .radio +.seasons-radio-text {
+    font-weight: 700;
 }
