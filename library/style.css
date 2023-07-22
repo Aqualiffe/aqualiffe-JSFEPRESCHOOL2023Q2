@@ -1,20 +1,25 @@
 * {
     font-family: "Inter", Verdana, sans-serif;
     box-sizing: border-box;
+    scroll-behavior:smooth !important;
+    color: #000;
 }
 body {
     margin: 0;
+    padding: 0;
     background: rgb(99, 95, 95);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-h1, h2, .welcom-text {
+h1, h2, h4, .welcom-text {
     font-family: "Forum", Verdana, sans-serif;
 }
 
-ul {
-    padding: 0px;
+h1, h2, h3, h4, h5, h6, ul, li, a, p {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
 }
 
 h1 {
@@ -40,12 +45,21 @@ h2 {
 }
 
 h3 {
-    color: black;
     font-size: 20px;
     font-family: "Inter";
     font-weight: 700;
     word-wrap: break-word;
     margin: 0 0 40px 0;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 40px;
+    letter-spacing: 2px;
+    word-wrap: break-word;
+    margin: 15px 0 0 20px;
 }
 
 .main, .main-header, .main-footer {
@@ -59,7 +73,8 @@ h3 {
 }
 
 .wrapper {
-    width: 1440px;
+
+    max-width: 1440px;
     background: white;
 }
 
@@ -85,10 +100,10 @@ h3 {
     padding: 0;
 }
 
-.menu li {
+.menu-element {
     display: inline-block;
     vertical-align: top;
-    margin-right: 29px;
+    margin: 0 30px 0 0;
 }
 
 .menu a {
@@ -101,7 +116,7 @@ h3 {
     word-wrap: break-word;
 }
 
-.menuElement:last-child {
+.menu-element:last-child {
     margin-right: 0px;
 }
 
@@ -159,11 +174,11 @@ h3 {
 .text-about {
     width: 100%; 
     text-align: center; 
-    color: black; 
     font-size: 20px;  
     font-weight: 400; 
     line-height: 40px; 
-    word-wrap: break-word
+    margin-bottom: 20px;
+    word-wrap: break-word;
 }
 
 .about-gallery {
@@ -212,16 +227,16 @@ h3 {
 .seasons {
     display: flex;
     width: 700px;
-    color: black;
     font-size: 20px;
     font-weight: 400;
     word-wrap: break-word;
     justify-content: space-between;
+    margin-bottom: 40px;
 }
 
-.group-seasons {
-    padding: 5px;
-}
+/*.group-seasons {
+    padding: 0px 5px 5px 0;
+}*/
 
 .filter-seasons {
     display: flex;
@@ -231,19 +246,20 @@ h3 {
     align-items: center;
 }
 
-.filter-seasons input {
+/*.filter-seasons input {
     width: 0;
 	height: 0;
 	position: absolute;
     opacity: 0;
     z-index: -1;
-}
+}*/
 
 .seasons-radio-text {
     padding-left: 20px;
+    cursor: pointer;
 }
 
-.radio {
+/*.radio {
     display: inline-block;
     position: relative;
     width: 17px;
@@ -269,8 +285,117 @@ h3 {
 
 .radio-button:checked + .radio::before {
     display: block;
+}*/
+
+.radio-button {
+    -webkit-appearance: none;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    outline: none;
+    border: 2px solid #000;
+    padding: 3px; 
+    margin: 0;
+    cursor: pointer;
+  }
+  
+.radio-button:checked {
+    border-color: #000;
+    background: #000 content-box;
+
 }
 
 .filter-seasons input:checked + .radio +.seasons-radio-text {
     font-weight: 700;
+}
+
+.favorites-conteiner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+.favorites-book {
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    height: 555px;
+    border: 0.50px solid black; 
+    margin-bottom: 40px;
+    margin-right: 40px;
+    position: relative;
+}
+
+.h4-line {
+    border: 0.50px solid #BB945F;
+    width: 60px;
+    height: 1px;
+    margin: 0 20px 20px;
+}
+
+.book-img {
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    bottom: -0.50px;
+    right: -40px;
+}
+
+.book_button {
+    width: 75px; 
+    height: 30px;
+    border-radius: 2px; 
+    border: 0.50px solid #0C0C0E;
+    margin-left: 20px;
+    background-color: white;
+    color: #0C0C0E;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    word-wrap: break-word;
+}
+
+.book_button[disabled] {
+    width: 75px; 
+    height: 30px;
+    border-radius: 2px; 
+    color: #BB945F;
+    border: 0.50px solid #BB945F;
+    background-color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    word-wrap: break-word
+}
+
+.book-name {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 40px;
+    letter-spacing: 2px;
+    word-wrap: break-word;
+    margin-left: 20px;
+}
+
+.book-author {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 40px;
+    letter-spacing: 2px;
+    word-wrap: break-word;
+    margin-left: 20px;
+}
+
+.book-description {
+    width: 355px;
+    height: 320px;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 40px;
+    letter-spacing: 2px;
+    word-wrap: break-word;
+    margin: 20px 0 15px 20px;
 }

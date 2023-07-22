@@ -15,12 +15,12 @@
             <h1>Brooklyn Public Library</h1>
             <div class="menu-head">
                 <nav class="menu">
-                    <ul>
-                        <li class="menuElement"><a href="#About">About</a></li>
-                        <li class="menuElement"><a href="#Favorites">Favorites</a></li>
-                        <li class="menuElement"><a href="#CofeeShop">Coffee shop</a></li>
-                        <li class="menuElement"><a href="#Contacts">Contacts</a></li>
-                        <li class="menuElement"><a href="#LibraryCard">Library Card</a></li>
+                    <ul class="menu">
+                        <li class="menu-element"><a href="#About">About</a></li>
+                        <li class="menu-element"><a href="#Favorites">Favorites</a></li>
+                        <li class="menu-element"><a href="#CofeeShop">Coffee shop</a></li>
+                        <li class="menu-element"><a href="#Contacts">Contacts</a></li>
+                        <li class="menu-element"><a href="#LibraryCard">Library Card</a></li>
                     </ul>
                 </nav>
                 <div class="user-account">
@@ -30,7 +30,7 @@
                 </div>
             </div>
         </header>
-        <aside class="Welcome">
+        <section class="Welcome">
             <div class="welcome-img">
                 <div class="gradient">
                     <div class="welcome-content">
@@ -40,7 +40,9 @@
                     </div>
                 </div>
             </div>
-        </aside>
+        </section>
+    </div>
+    <div class="wrapper">
         <main class="main">
             <section class="About">
                 <section class="section-title">
@@ -68,13 +70,13 @@
                 </div>
             </section>
             <section class="Favorites">
-                <section class="section-title">
+                <div class="section-title">
                     <h2 id="Favorites">Favorites</h2>
                     <div class="h2-line"></div>
-                </section>
+                </div>
                 
                 <h3>Pick favorites of season</h3>
-                <section class="seasons">
+                <div class="seasons">
                     <div class="group-seasons">
                         <label for="radio-winter" class="filter-seasons">
                             <input type="radio" id="radio-winter" class="radio-button" name="content-seasons" checked="checked">
@@ -103,10 +105,191 @@
                             <span class="seasons-radio-text">Autumn</span>
                         </label>
                     </div>
-                </section>
-                <section>
-                    карточки
-                </section>
+                </div>
+                <article class="favorites-conteiner winter-content">
+                    <div class="favorites-book">
+                        <h4>Staff Picks</h4>
+                        <div class="h4-line"></div>
+                        <p class="book-name">The Book Eaters</p>
+                        <p class="book-author">By Sunyi Dean</p>
+                        <p class="book-description">
+                            An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous mind-eater son from tradition and certain death. Complete with dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.
+                        </p>
+                        <button class="book_button">Buy</button>                        
+                        <img src="./assets/img/books/bookThe_Book_Eaters.jpg" alt="The Book Eaters By Sunyi Dean" class="book-img">                        
+                    </div>
+                    <div class="favorites-book">
+                        <h4>Staff Picks</h4>
+                        <div class="h4-line"></div>
+                        <p class="book-name">Cackle</p>
+                        <p class="book-author">By Rachel Harrison</p>
+                        <p class="book-description">
+                            Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.                            
+                        </p>
+                        <button class="book_button">Buy</button>                        
+                        <img src="./assets/img/books/bookCackle.jpg" alt="Cackle By Rachel Harrison" class="book-img">                        
+                    </div>
+                    <div class="favorites-book">
+                        <h4>Staff Picks</h4>
+                        <div class="h4-line"></div>
+                        <p class="book-name">Dante: Poet of the Secular World</p>
+                        <p class="book-author">By Erich Auerbach</p>
+                        <p class="book-description">
+                            Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.
+                        </p>
+                        <button class="book_button">Buy</button>                        
+                        <img src="./assets/img/books/bookDante.jpg" alt="Dante: Poet of the Secular World By Erich Auerbach" class="book-img">                        
+                    </div>
+                    <div class="favorites-book">
+                        <h4>Staff Picks</h4>
+                        <div class="h4-line"></div>
+                        <p class="book-name">The Last Queen</p>
+                        <p class="book-author">By Clive Irving</p>
+                        <p class="book-description">
+                            A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.
+                        </p>
+                        <button class="book_button" disabled>Own</button>                        
+                        <img src="./assets/img/books/bookThe_Last_Queen.jpg" alt="The Last Queen By Clive Irving" class="book-img">                        
+                    </div>
+                </article>
+                <article class="favorites-conteiner spring-content">
+                    <div class="favorites-book">
+                        <h4>Staff Picks</h4>
+                        <div class="h4-line"></div>
+                        <p class="book-name">The Body</p>
+                        <p class="book-author">By Stephen King</p>
+                        <p class="book-description">
+                            Powerful novel that takes you back to a nostalgic time, exploring both the beauty and danger and loss of innocence that is youth.
+                        </p>
+                        <button class="book_button">Buy</button>                        
+                        <img src="./assets/img/books/bookThe_Body.jpg" alt="The Body By Stephen King" class="book-img">                        
+                    </div>
+                    <div class="favorites-book">
+                        <h4>Staff Picks</h4>
+                        <div class="h4-line"></div>
+                        <p class="book-name">Carry: A Memoir of Survival on Stolen Land</p>
+                        <p class="book-author">By Toni Jenson</p>
+                        <p class="book-description">
+                            This memoir about the author's relationship with gun violence feels both expansive and intimate, resulting in a lyrical indictment of the way things are.
+                        </p>
+                        <button class="book_button">Buy</button>                        
+                        <img src="./assets/img/books/bookCarry.jpg" alt="Carry: A Memoir of Survival on Stolen Land By Toni Jenson" class="book-img">                        
+                    </div>
+                    <div class="favorites-book">
+                        <h4>Staff Picks</h4>
+                        <div class="h4-line"></div>
+                        <p class="book-name">Days of Distraction</p>
+                        <p class="book-author">By Alexandra Chang</p>
+                        <p class="book-description">
+                            A sardonic view of Silicon Valley culture, a meditation on race, and a journal of displacement and belonging, all in one form-defying package of spare prose.
+                        </p>
+                        <button class="book_button">Buy</button>                        
+                        <img src="./assets/img/books/bookDays_of_Distraction.jpg" alt="Days of Distraction By Alexandra Chang" class="book-img">                        
+                    </div>
+                    <div class="favorites-book">
+                        <h4>Staff Picks</h4>
+                        <div class="h4-line"></div>
+                        <p class="book-name">Dominicana</p>
+                        <p class="book-author">By Angie Cruz</p>
+                        <p class="book-description">
+                            A fascinating story of a teenage girl who marries a man twice her age with the promise to bring her to America. Her marriage is an opportunity for her family to eventually immigrate. For fans of Isabel Allende and Julia Alvarez.
+                        </p>
+                        <button class="book_button" disabled>Own</button>                         
+                        <img src="./assets/img/books/bookDominicana.jpg" alt="Dominicana By Angie Cruz" class="book-img">                        
+                    </div>
+                </article>
+                <article class="favorites-conteiner summer-content">
+                    <div class="favorites-book">
+                        <h4>Staff Picks</h4>
+                        <div class="h4-line"></div>
+                        <p class="book-name">The Book Eaters</p>
+                        <p class="book-author">By Sunyi Dean</p>
+                        <p class="book-description">
+                            An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous mind-eater son from tradition and certain death. Complete with dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.
+                        </p>
+                        <button class="book_button">Buy</button>                        
+                        <img src="./assets/img/books/bookThe_Book_Eaters.jpg" alt="The Book Eaters By Sunyi Dean" class="book-img">                        
+                    </div>
+                    <div class="favorites-book">
+                        <h4>Staff Picks</h4>
+                        <div class="h4-line"></div>
+                        <p class="book-name">Cackle</p>
+                        <p class="book-author">By Rachel Harrison</p>
+                        <p class="book-description">
+                            Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.                            
+                        </p>
+                        <button class="book_button">Buy</button>                        
+                        <img src="./assets/img/books/bookCackle.jpg" alt="Cackle By Rachel Harrison" class="book-img">                        
+                    </div>
+                    <div class="favorites-book">
+                        <h4>Staff Picks</h4>
+                        <div class="h4-line"></div>
+                        <p class="book-name">Dante: Poet of the Secular World</p>
+                        <p class="book-author">By Erich Auerbach</p>
+                        <p class="book-description">
+                            Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.
+                        </p>
+                        <button class="book_button">Buy</button>                        
+                        <img src="./assets/img/books/bookDante.jpg" alt="Dante: Poet of the Secular World By Erich Auerbach" class="book-img">                        
+                    </div>
+                    <div class="favorites-book">
+                        <h4>Staff Picks</h4>
+                        <div class="h4-line"></div>
+                        <p class="book-name">The Last Queen</p>
+                        <p class="book-author">By Clive Irving</p>
+                        <p class="book-description">
+                            A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.
+                        </p>
+                        <button class="book_button" disabled>Own</button>                         
+                        <img src="./assets/img/books/bookThe_Last_Queen.jpg" alt="The Last Queen By Clive Irving" class="book-img">                        
+                    </div>
+                </article>
+                <article class="favorites-conteiner autumn-content">
+                    <div class="favorites-book">
+                        <h4>Staff Picks</h4>
+                        <div class="h4-line"></div>
+                        <p class="book-name">The Book Eaters</p>
+                        <p class="book-author">By Sunyi Dean</p>
+                        <p class="book-description">
+                            An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous mind-eater son from tradition and certain death. Complete with dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.
+                        </p>
+                        <button class="book_button">Buy</button>                        
+                        <img src="./assets/img/books/bookThe_Book_Eaters.jpg" alt="The Book Eaters By Sunyi Dean" class="book-img">                        
+                    </div>
+                    <div class="favorites-book">
+                        <h4>Staff Picks</h4>
+                        <div class="h4-line"></div>
+                        <p class="book-name">Cackle</p>
+                        <p class="book-author">By Rachel Harrison</p>
+                        <p class="book-description">
+                            Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.                            
+                        </p>
+                        <button class="book_button">Buy</button>                        
+                        <img src="./assets/img/books/bookCackle.jpg" alt="Cackle By Rachel Harrison" class="book-img">                        
+                    </div>
+                    <div class="favorites-book">
+                        <h4>Staff Picks</h4>
+                        <div class="h4-line"></div>
+                        <p class="book-name">Dante: Poet of the Secular World</p>
+                        <p class="book-author">By Erich Auerbach</p>
+                        <p class="book-description">
+                            Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.
+                        </p>
+                        <button class="book_button">Buy</button>                        
+                        <img src="./assets/img/books/bookDante.jpg" alt="Dante: Poet of the Secular World By Erich Auerbach" class="book-img">                        
+                    </div>
+                    <div class="favorites-book">
+                        <h4>Staff Picks</h4>
+                        <div class="h4-line"></div>
+                        <p class="book-name">The Last Queen</p>
+                        <p class="book-author">By Clive Irving</p>
+                        <p class="book-description">
+                            A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.
+                        </p>
+                        <button class="book_button" disabled>Own</button>                         
+                        <img src="./assets/img/books/bookThe_Last_Queen.jpg" alt="The Last Queen By Clive Irving" class="book-img">                        
+                    </div>
+                </article>
             </section>
             <section class="CofeeShop">
                 <section class="section-title">
@@ -128,6 +311,8 @@
             </section>
         Основное содержимое страницы
         </main>
+    </div>
+    <div class="wrapper"></div>
         <footer class="main-footer">
         Подвал сайта
         </footer>
