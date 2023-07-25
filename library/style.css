@@ -52,7 +52,8 @@ h3 {
     margin: 0 0 40px 0;
 }
 
-h4 {
+.staff-picks {
+    font-family: "Forum", Verdana, sans-serif;
     font-size: 20px;
     font-weight: 400;
     text-transform: capitalize;
@@ -77,8 +78,6 @@ h4 {
     max-width: 1440px;
     background: white;
 }
-
-/* Шапка и меню */
 
 .main-header {
     background: #0C0C0E;
@@ -326,7 +325,7 @@ h4 {
     position: relative;
 }
 
-.h4-line {
+.staff-picks-line {
     border: 0.50px solid #BB945F;
     width: 60px;
     height: 1px;
@@ -398,4 +397,120 @@ h4 {
     letter-spacing: 2px;
     word-wrap: break-word;
     margin: 20px 0 15px 20px;
+}
+
+.spring-content, .summer-content, .autumn-content {
+    display: none;
+}
+
+.text-cofeeshop {
+    width: 100%; 
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    word-wrap: break-word;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.CofeeShop-menu {
+    display: flex;
+    justify-content: space-between;
+    height: 520px;
+}
+
+.CofeeShop-name {
+    color: #BB945F;
+    font-size: 40px;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 40px;
+    letter-spacing: 2px;
+    word-wrap: break-word;
+}
+
+.coffee-tea {
+    display: flex;
+    flex-direction: column;
+    width: 438px;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.desserts {
+    display: flex;
+    flex-direction: column;
+    width: 438px;
+    align-items: flex-end;
+    gap: 40px;
+}
+
+.CofeeShop-items-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.CofeeShop-item-name {
+    width: 199px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;     
+}
+
+.CoffeeShop-item-line {
+    width: 100px;
+    height: 1px;
+    background: #BB945F;
+}
+
+.CoffeeShop-item-prise {
+    color: #000;
+    font-family: "Forum";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.CofeeShop-items-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 60px; 
+    width: 480px;
+}
+
+.CofeeShop-item-name-right {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;     
+}
+
+.contacts-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.contact {}
+
+.map {
+    width: 696px;
+    height: 414px;
+}
+
+.contact {
+    box-sizing: border-box;
+    text-align: left;
+    margin-top: 20px;
 }
