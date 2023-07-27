@@ -3,18 +3,21 @@
   <head>
     <meta charset="utf-8">
     <title>Заголовок страницы</title>
+    <script src="./index.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded&family=Inter:wght@400;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded&family=Forum&family=Inter:wght@400;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">    
+    <link href="./assets/img/favicon.ico" rel="Icon">
   </head>
   <body>
-    <div class="wrapper">
-        <header class="main-header">
+    
+    <header class="main-header">
+        <div class="container-header">
             <h1>Brooklyn Public Library</h1>
             <div class="menu-head">
-                <nav class="menu">
+                <nav class="nav-menu">
                     <ul class="menu">
                         <li class="menu-element"><a href="#About">About</a></li>
                         <li class="menu-element"><a href="#Favorites">Favorites</a></li>
@@ -29,19 +32,18 @@
                     </a>
                 </div>
             </div>
-        </header>
-        <section class="Welcome">
-            <div class="welcome-img">
-                <div class="gradient">
-                    <div class="welcome-content">
-                        <div class="welcom-text">
-                            Welcome&nbsp;<br/>to the Brooklyn Library
-                        </div>
-                    </div>
+        </div>
+    </header>
+    <section class="Welcome">    
+        <div class="container-welcome">
+            <div class="welcome-content">
+                <div class="welcom-text">
+                    Welcome&nbsp;<br/>to the Brooklyn Library
                 </div>
             </div>
-        </section>
-    </div>
+        </div> 
+    </section>
+   
     <div class="wrapper">
         <main class="main">
             <section class="About">
@@ -58,13 +60,13 @@
                 <div class="carousel-wrapper">
                     <div class="carousel_pagination">
                         <div class="box">
-                            <span class="dot active"></p>
+                            <button class="dot active"></button>                            
                         </div>
                         <div class="box">
-                            <span class="dot"></p>
+                            <button class="dot"></button>
                         </div>
                         <div class="box">
-                            <span class="dot"></p>
+                            <button class="dot"></button>
                         </div>
                     </div>
                 </div>
@@ -296,7 +298,7 @@
                     <h2 id="CofeeShop">Coffee Shop</h2>
                     <div class="h2-line"></div>          
                 </div>
-                <p class="text-cofeeshop">In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly conversation.&nbsp;<br>You can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and also you can try desserts&nbsp;<br> from bakery.</p>
+                <p class="text-cofeeshop">In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly conversation.&nbsp;<br>You can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and also you can try desserts<br>from bakery.</p>
                 <div class="CofeeShop-menu">
                     <div class="coffee-tea">
                         <h4 class="CofeeShop-name">Coffee & Tea</h4>
@@ -374,9 +376,9 @@
                 <div class="contacts-info">
                     <div class="contact">
                         <p class="contact-name">For all Library inquiries:</p>
-                        <p class="contact-phone">Please call <a href="tel:(617)730-2370" target="_blank" class="contacts-p">(617) 730-2370</a></p>
-                        <p class="contact-phone">For TTY service, please call <a href="tel:(617)730-2370" target="_blank" class="contacts-p">(617) 730-2370</a></p>
-                        <p class="contact-phone">Putterham Library: <a href="tel:(617)730-2385" target="_blank" class="contacts-p">(617) 730-2385</a></p>                 
+                        <p class="contact-phone">Please call <a href="tel:(617)730-2370" target="_blank">(617) 730-2370</a></p>
+                        <p class="contact-phone">For TTY service, please call <a href="tel:(617)730-2370" target="_blank">(617) 730-2370</a></p>
+                        <p class="contact-phone">Putterham Library: <a href="tel:(617)730-2385" target="_blank">(617) 730-2385</a></p>                 
                         <p class="contact-mail">Senior Staff</p>
                         <p class="contact-phone">Library Director: <a href="mailto:AmandaHirst@gmail.com" class="mail">Amanda Hirst</a></p>
                     </div>
@@ -416,10 +418,37 @@
             </section>       
         </main>
     </div>
-    <div class="wrapper"></div>
-        <footer class="main-footer">
-        Подвал сайта
-        </footer>
-    </div>
+    <footer class="main-footer">
+       <div class="conteiner-footer">
+           <div class="footer-top">
+            <div class="footer-top__left">
+                <address class="footer-address">
+                    <a href="https://goo.gl/maps/jD7S8wUsDyZdiZkg8" class="link-map">286 Cadman Plaza, New York,<br> NY 11238, United States</a>
+                </address>
+                <ul class="footer-social">
+                    <li><a href="http://www.twitter.com/bklynlibrary" target="_blank">
+                        <img src="./assets/img/u_twitter.svg" alt="Twitter">
+                    </a></li>
+                    <li><a href="http://www.instagram.com/bklynlibrary" target="_blank">
+                        <img src="./assets/img/u_instagram.svg" alt="Instagram">
+                    </a></li>
+                    <li><a href="http://www.facebook.com/brooklynpubliclibrary" target="_blank">
+                        <img src="./assets/img/u_facebook.svg" alt="Facebook">
+                    </a></li>
+                </ul>
+            </div>
+            <div class="footer-top__right">
+                <p class="opening-hours">Mon - Fri<br>08:00 am - 07:00 pm</p>
+                <p class="opening-hours">Sat - Sun<br>10:00 am - 06:00 pm</p>
+            </div>
+           </div> 
+           <div class="footer-line"></div>
+           <div class="footer-bottom">
+                <p>2023</p>
+                <a href="https://rs.school/js-stage0/" target="_blank" class="footer-TRSS">The Rolling Scopes School</a>
+                <a href="https://github.com/Aqualiffe" target="_blank">Aqualiffe</a>
+           </div>
+       </div>         
+    </footer>    
   </body>
 </html>

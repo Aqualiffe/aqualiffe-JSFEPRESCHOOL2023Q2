@@ -5,9 +5,10 @@
     color: #000;
 }
 body {
-    margin: 0;
-    padding: 0;
-    background: rgb(99, 95, 95);
+    background-color: #8E8E8E;
+    min-width: 1440px;
+    margin: 0 auto;
+    padding: 0;   
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,6 +27,7 @@ h1 {
     font-weight: 400;
     font-size: 30px;
     letter-spacing: 0.60px;
+    color: #fff;
 }
 
 h2 {
@@ -41,7 +43,7 @@ h2 {
     background: #0C0C0E;
     width: 50px;
     height: 1px;
-    margin: 0 auto;
+    margin: 0px auto;
 }
 
 h3 {
@@ -63,7 +65,7 @@ h3 {
     margin: 15px 0 0 20px;
 }
 
-.main, .main-header, .main-footer {
+.main, .main-header, .footer-top, .container-header {
     padding: 0 20px;
 }
 .section-title {
@@ -74,18 +76,26 @@ h3 {
 }
 
 .wrapper {
-
     max-width: 1440px;
     background: white;
 }
 
 .main-header {
+    display: flex;
+    justify-content: center;
     background: #0C0C0E;
+    width: 1440px;
+    height: 90px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.container-header {
     color: white;
     display: flex;
-    height: 90px;
     align-items: center;
     justify-content: space-between;
+    width: 1440px;
 }
 
 .menu-head {
@@ -97,6 +107,7 @@ h3 {
     display: flex;
     align-items: center;
     padding: 0;
+    list-style-type: none;
 }
 
 .menu-element {
@@ -113,10 +124,17 @@ h3 {
     font-weight: 400;
     line-height: 50px;
     word-wrap: break-word;
+    transition: 0.3s;
 }
 
 .menu-element:last-child {
     margin-right: 0px;
+}
+
+.menu a:hover {    
+    text-decoration: underline;
+    cursor: pointer;
+    
 }
 
 .user-account {
@@ -133,22 +151,21 @@ h3 {
 }
 
 .Welcome {
+    display: flex;
+    background-image: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%),
+    url(./assets/img/welcome.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     width: 1440px;
     height: 600px;
-}
-.welcome-img {
-    background-image: url(./assets/img/welcome.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
+    margin: 0;
+    padding: 0;  
 }
 
-.gradient {
-    width: 1440px; 
-    height: 600px; 
-    background: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0%, rgba(18.33, 18.33, 21.25, 0.10) 50%);
-    display: flex;
+.container-welcome {
+    width: 1440px;
+    margin: 0 auto;
 }
 
 .welcome-content {
@@ -209,17 +226,25 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .dot {
     width: 16px;
     height: 16px;
-    border-radius: 50%;
-    background-color: #0C0C0E; 
+    border-radius: 100%;
+    margin: 5px;
     cursor: pointer;
+    background-color:#0C0C0E;
+    border: #0C0C0E; 
+    transition-duration: 0.3s;
 }
 
 .dot.active {
+    background-color: #BB945F;
+}
+
+.dot:hover {
     background-color: #BB945F;
 }
 
@@ -233,10 +258,6 @@ h3 {
     margin-bottom: 40px;
 }
 
-/*.group-seasons {
-    padding: 0px 5px 5px 0;
-}*/
-
 .filter-seasons {
     display: flex;
     flex-direction: row;
@@ -245,46 +266,10 @@ h3 {
     align-items: center;
 }
 
-/*.filter-seasons input {
-    width: 0;
-	height: 0;
-	position: absolute;
-    opacity: 0;
-    z-index: -1;
-}*/
-
 .seasons-radio-text {
     padding-left: 20px;
     cursor: pointer;
 }
-
-/*.radio {
-    display: inline-block;
-    position: relative;
-    width: 17px;
-    height: 17px;
-    border-radius: 9999px; 
-    border: 2px black solid;
-    vertical-align: text-top;
-}
-
-.radio::before {
-    content: '';
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    background: #000;
-    border-radius: 9999px;
-    position: absolute;
-	left: 50%;
-	top: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-}
-
-.radio-button:checked + .radio::before {
-    display: block;
-}*/
 
 .radio-button {
     -webkit-appearance: none;
@@ -422,6 +407,10 @@ h3 {
     margin: 40px 0;
 }
 
+.CofeeShop {
+    padding-bottom: 40px;
+}
+
 .CofeeShop-menu {
     display: flex;
     justify-content: space-between;
@@ -502,6 +491,10 @@ h3 {
     text-transform: capitalize;     
 }
 
+.Contacts {
+    padding-bottom: 40px;
+}
+
 .contacts-info {
     display: flex;
     flex-direction: row;
@@ -547,6 +540,10 @@ h3 {
     letter-spacing: 2px;
     word-wrap: break-word;
     margin-top: 40px;        
+}
+
+.contact a {
+    text-decoration: none;
 }
 
 .mail {
@@ -706,4 +703,91 @@ h3 {
 .get-card-btm:hover {
     background-color: #BB945F;
     border: 0;
+}
+
+.main-footer {
+    background: #0C0C0E;
+    width: 1440px;
+    height: 250px;
+}
+
+.conteiner-footer {
+    width: 1440px;
+    margin: 0 auto;
+    background-color: #0C0C0E;
+    
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.footer-top__left {
+    width: 229px;
+    color: #FFF;
+
+}
+
+.footer-address a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    line-height: 20px;
+    word-wrap: break-word;
+    font-style: normal;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: left;
+    gap: 15px;
+    margin-top: 18px;
+    color: #F5EFDB;
+    list-style-type: none;
+}
+
+.footer-top__right {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    gap: 10px;
+}
+
+.opening-hours {
+    color: #FFF;
+    font-size: 15px;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+.footer-line {
+    border: 0.50px solid white;
+    width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin: 44px 20px;
+}
+
+.footer-bottom a, .footer-bottom p {
+    display: flex;
+    color: #FFF;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 2px;
+    margin: 0;
+    text-decoration: none;
+}
+
+.footer-TRSS {
+    padding-left: 45px;
 }
