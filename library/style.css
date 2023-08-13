@@ -740,6 +740,8 @@ h3 {
     display: flex;
     flex-direction: column;
     text-align: right;
+    align-items: flex-end;
+    width: 600px;
 }
 
 .get-card__name {
@@ -757,6 +759,7 @@ h3 {
     letter-spacing: 0.40px;
     word-wrap: break-word;
     margin: 35px 0;
+    width: 456px;
 }
 
 .get-card__button {
@@ -913,9 +916,47 @@ h3 {
     .box.hide {
         display: block;
     }
+    
+    .carousel-wrapper {
+        height: 71px;
+    }
 
+    .Favorites {
+        margin-top: 10px;
+    }
 
+    .card-info {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 40px;
+    }
 
+    .get-card {
+        align-items: center;
+    }
+
+    .get-card__info {
+        align-items: center;
+        text-align: center;        
+    }
+
+    .get-card__text {
+        margin: 40px 0;
+        width: 100%;
+        
+    }
+
+    .find-card  {
+        margin-bottom: 21px;
+    }
+
+    .map {
+        width: auto;
+    }
+
+    .map img {
+        width: 100%;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -967,36 +1008,6 @@ h3 {
         gap: 100px;
     }
 
-    .card-info {
-        flex-direction: column;
-        align-items: center;
-        padding-bottom: 40px;
-    }
-
-    .get-card {
-        align-items: center;
-    }
-
-    .get-card__info {
-        align-items: center;
-        text-align: center;        
-    }
-
-    .get-card__text {
-        margin: 40px 0;
-    }
-
-    .find-card  {
-        margin-bottom: 21px;
-    }
-
-    .map {
-        width: auto;
-    }
-
-    .map img {
-        width: 100%;
-    }
 }
 
 @media (max-width: 750px) {
