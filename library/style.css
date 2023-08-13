@@ -6,13 +6,17 @@
 }
 body {
     background-color: #8E8E8E;
-    min-width: 1440px;
-    margin: 0 auto;
-    padding: 0;   
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 0;
+    margin: 0;
 }
+
+.body-wrapper {
+    max-width: 1440px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+
 h1, h2, h4, .welcom-text {
     font-family: "Forum", Verdana, sans-serif;
 }
@@ -28,6 +32,7 @@ h1 {
     font-size: 30px;
     letter-spacing: 0.60px;
     color: #fff;
+    margin-right: auto;
 }
 
 h2 {
@@ -65,9 +70,16 @@ h3 {
     margin: 15px 0 0 20px;
 }
 
-.main, .main-header, .footer-top, .container-header {
+.main, .footer-top, .main-header {
     padding: 0 20px;
 }
+
+.main-header {
+    background-color: #0C0C0E;
+    
+    height: 90px;
+}
+
 .section-title {
     display: flex;
     flex-direction: column;
@@ -75,27 +87,12 @@ h3 {
     margin-bottom: 40px;
 }
 
-.wrapper {
-    max-width: 1440px;
-    background: white;
-}
-
-.main-header {
-    display: flex;
-    justify-content: center;
-    background: #0C0C0E;
-    width: 1440px;
-    height: 90px;
-    padding: 0;
-    margin: 0 auto;
-}
-
 .container-header {
     color: white;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 1440px;
+    justify-content: space-between;   
+    width: 100%;
 }
 
 .menu-head {
@@ -132,15 +129,17 @@ h3 {
 }
 
 .menu a:hover {    
-    text-decoration: underline;
+    color: #BB945F;
     cursor: pointer;
     
 }
 
 .user-account {
+    position: relative;
     width: 28px;
     height: 28px;
     margin: 31px 0px 31px 40px;
+    z-index: 3;
 }
 
 .ico_profile {
@@ -150,6 +149,65 @@ h3 {
     height: 28px;
 }
 
+.header__burger-btn {
+    display: none;
+    position: relative;
+    padding: 0;
+    width: 45px;
+    height: 22px;
+    border: none;
+    outline: none;
+    background-color: #0C0C0E;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.header__burger-btn span {
+    display: block;
+    position: absolute;
+    width: 45px;
+    height: 2px;
+    background-color: #fff;
+    left: 0px;
+    z-index: 3;
+    transition: background-color 0.3s, opacity .5s, transform .5s;
+    will-change: transform;
+}
+
+.header__burger-btn:hover span {
+    background-color: #BB945F;
+}
+
+/*бургер*/
+.header__burger-btn span:nth-child(1) {
+    transform: translateY(-11px);
+}
+
+.header__burger-btn span:nth-child(2) {
+    transform: translateY(-1px);
+}
+
+.header__burger-btn span:nth-child(3) {
+    transform: translateY(9px);
+}
+
+/*крестик*/
+.main-header.open .header__burger-btn span:nth-child(1) {
+    transform: translateY(0) rotate(45deg);
+}
+
+.main-header.open .header__burger-btn span:nth-child(2) {
+    opacity: 0;
+}
+
+.main-header.open .header__burger-btn span:nth-child(3) {
+    transform: translateY(0) rotate(-45deg);
+}
+
+.main-header.open .header__burger-btn:hover span {
+    background-color: #BB945F;
+}
+
 .Welcome {
     display: flex;
     background-image: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%),
@@ -157,16 +215,12 @@ h3 {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    width: 1440px;
+   /* width: 1440px;*/
     height: 600px;
     margin: 0;
     padding: 0;  
 }
 
-.container-welcome {
-    width: 1440px;
-    margin: 0 auto;
-}
 
 .welcome-content {
     width: 600px; 
@@ -187,6 +241,9 @@ h3 {
     word-wrap: break-word;
 }
 
+.main {
+    background-color: #FFF;
+}
 .text-about {
     width: 100%; 
     text-align: center; 
@@ -199,7 +256,7 @@ h3 {
 
 .about-gallery {
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
 }
 
 .img_about-gallery {
@@ -218,7 +275,24 @@ h3 {
     display: flex;
     width: 78px;
     height: 26px;
+    justify-content: center;
 }
+
+.carret_left, .carret_right {
+    width: 24px;
+    height: 24px;
+    display: none;
+}
+
+.carret_left {
+    background-image: url(./assets/img/Carret_Left.svg);
+}
+
+.carret_right {
+    background-image: url(./assets/img/Carret_Right.svg);
+}
+
+
 
 .box {
     width: 26px;
@@ -248,6 +322,10 @@ h3 {
     background-color: #BB945F;
 }
 
+.box.hide {
+    display: none;
+}
+
 .seasons {
     display: flex;
     width: 700px;
@@ -272,6 +350,7 @@ h3 {
 }
 
 .radio-button {
+    appearance: none;
     -webkit-appearance: none;
     width: 17px;
     height: 17px;
@@ -414,7 +493,7 @@ h3 {
 .CofeeShop-menu {
     display: flex;
     justify-content: space-between;
-    height: 520px;
+    /*height: 520px;*/
 }
 
 .CofeeShop-name {
@@ -438,7 +517,7 @@ h3 {
 .desserts {
     display: flex;
     flex-direction: column;
-    width: 438px;
+    /*width: 438px;*/
     align-items: flex-end;
     gap: 40px;
 }
@@ -503,8 +582,8 @@ h3 {
 }
 
 .map {
-    width: 696px;
-    height: 414px;
+    max-width: 696px;
+    /*height: 414px; */
 }
 
 .contact {
@@ -661,6 +740,8 @@ h3 {
     display: flex;
     flex-direction: column;
     text-align: right;
+    align-items: flex-end;
+    width: 600px;
 }
 
 .get-card__name {
@@ -678,6 +759,7 @@ h3 {
     letter-spacing: 0.40px;
     word-wrap: break-word;
     margin: 35px 0;
+    width: 456px;
 }
 
 .get-card__button {
@@ -707,12 +789,12 @@ h3 {
 
 .main-footer {
     background: #0C0C0E;
-    width: 1440px;
+    /*width: 1440px;*/
     height: 250px;
 }
 
 .conteiner-footer {
-    width: 1440px;
+    /*width: 1440px;*/
     margin: 0 auto;
     background-color: #0C0C0E;
     
@@ -769,6 +851,10 @@ h3 {
     margin: 0 auto;
 }
 
+.mail:hover, .link-map:hover, .footer-TRSS:hover, .git-name:hover  {
+    color: #BB945F;
+}
+
 .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -788,6 +874,149 @@ h3 {
     text-decoration: none;
 }
 
+
 .footer-TRSS {
     padding-left: 45px;
+}
+
+.twitter:hover, .instagram:hover, .facebook:hover {
+    filter: brightness(0) saturate(100%) invert(61%) sepia(30%) saturate(590%) hue-rotate(355deg) brightness(95%) contrast(82%);
+    -webkit-filter: brightness(0) saturate(100%) invert(61%) sepia(30%) saturate(590%) hue-rotate(355deg) brightness(95%) contrast(82%);
+}
+
+.carret_left:hover, .carret_right:hover  {
+    cursor: pointer;
+}
+
+
+@media (max-width: 1200px) {
+    .favorites-conteiner {
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+    }
+
+    .about-gallery {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .gallery-tablet {
+        display: none;
+    }
+
+    .img_about-gallery {
+        margin: 0 58px;
+    }
+
+    .carret_left, .carret_right {
+        display: inline-block;
+    }
+
+    .box.hide {
+        display: block;
+    }
+    
+    .carousel-wrapper {
+        height: 71px;
+    }
+
+    .Favorites {
+        margin-top: 10px;
+    }
+
+    .card-info {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 40px;
+    }
+
+    .get-card {
+        align-items: center;
+    }
+
+    .get-card__info {
+        align-items: center;
+        text-align: center;        
+    }
+
+    .get-card__text {
+        margin: 40px 0;
+        width: 100%;
+        
+    }
+
+    .find-card  {
+        margin-bottom: 21px;
+    }
+
+    .map {
+        width: auto;
+    }
+
+    .map img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .header__burger-btn {
+        display: block;
+        
+    }
+    .nav-menu {
+        position: absolute;
+        right: -332px;
+        top: 90px;
+        background-color: #0C0C0E;
+        padding: 10px 107px 100px 107px;
+        width: 332px;       
+        height: 480px;
+        visibility: hidden;
+        transition: transform .5s, visibility .5s;
+        
+    }
+    .menu {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        height: 370px;
+        width: 118px;
+    }
+    .menu-element {
+        margin: 0;
+    }
+    .user-account {
+        margin-right: 40px;        
+    }
+
+    .main-header.open .nav-menu {
+        transform: translateX(-100%);
+        visibility: visible;
+    }
+
+    .CofeeShop-menu {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .contacts-info {
+        flex-direction: column;
+        gap: 100px;
+    }
+
+}
+
+@media (max-width: 750px) {
+    .seasons {
+        width: 100%;
+        gap: 25px;
+    }
+
+    .seasons-radio-text {
+        padding-left: 15px;
+    }
 }
