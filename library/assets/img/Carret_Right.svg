@@ -1,0 +1,19 @@
+<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="24" height="25" fill="#8E8E8E"/>
+<g id="Tablet - 768" clip-path="url(#clip0_0_1)">
+<rect width="768" height="7824" transform="translate(-667 -1199)" fill="white"/>
+<g id="About">
+<rect width="768" height="862" transform="translate(-667 -509)" fill="white"/>
+<g id="Frame 3">
+<g id="Carret_Right">
+<path id="Vector" d="M9 17.5L15 12.5L9 7.5" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_1">
+<rect width="768" height="7824" fill="white" transform="translate(-667 -1199)"/>
+</clipPath>
+</defs>
+</svg>

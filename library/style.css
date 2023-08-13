@@ -275,7 +275,24 @@ h3 {
     display: flex;
     width: 78px;
     height: 26px;
+    justify-content: center;
 }
+
+.carret_left, .carret_right {
+    width: 24px;
+    height: 24px;
+    display: none;
+}
+
+.carret_left {
+    background-image: url(./assets/img/Carret_Left.svg);
+}
+
+.carret_right {
+    background-image: url(./assets/img/Carret_Right.svg);
+}
+
+
 
 .box {
     width: 26px;
@@ -303,6 +320,10 @@ h3 {
 
 .dot:hover {
     background-color: #BB945F;
+}
+
+.box.hide {
+    display: none;
 }
 
 .seasons {
@@ -860,7 +881,44 @@ h3 {
     -webkit-filter: brightness(0) saturate(100%) invert(61%) sepia(30%) saturate(590%) hue-rotate(355deg) brightness(95%) contrast(82%);
 }
 
+.carret_left:hover, .carret_right:hover  {
+    cursor: pointer;
+}
+
+
 @media (max-width: 1200px) {
+    .favorites-conteiner {
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+    }
+
+    .about-gallery {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .gallery-tablet {
+        display: none;
+    }
+
+    .img_about-gallery {
+        margin: 0 58px;
+    }
+
+    .carret_left, .carret_right {
+        display: inline-block;
+    }
+
+    .box.hide {
+        display: block;
+    }
+
+
+
+}
+
+@media (max-width: 1000px) {
 
     .header__burger-btn {
         display: block;
@@ -871,7 +929,7 @@ h3 {
         right: -332px;
         top: 90px;
         background-color: #0C0C0E;
-        padding: 100px 107px;
+        padding: 10px 107px 100px 107px;
         width: 332px;       
         height: 480px;
         visibility: hidden;
@@ -897,20 +955,6 @@ h3 {
     .main-header.open .nav-menu {
         transform: translateX(-100%);
         visibility: visible;
-    }
-
-    .favorites-conteiner {
-        flex-direction: column;
-        align-content: center;
-        align-items: center;
-    }
-
-    .about-gallery {
-        justify-content: center;
-    }
-
-    .gallery-tablet {
-        display: none;
     }
 
     .CofeeShop-menu {
@@ -952,5 +996,16 @@ h3 {
 
     .map img {
         width: 100%;
+    }
+}
+
+@media (max-width: 750px) {
+    .seasons {
+        width: 100%;
+        gap: 25px;
+    }
+
+    .seasons-radio-text {
+        padding-left: 15px;
     }
 }
