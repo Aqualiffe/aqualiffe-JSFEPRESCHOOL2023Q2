@@ -2,47 +2,58 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Заголовок страницы</title>
-    <script src="./index.js"></script>
+    <title>Заголовок страницы</title>    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded&family=Inter:wght@400;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded&family=Forum&family=Inter:wght@400;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">     
     <link href="./assets/img/favicon.ico" rel="Icon">
+    <meta name="viewport" content="width=device-width">
   </head>
   <body>
-    
-    <header class="main-header">
-        <div class="container-header">
-            <h1>Brooklyn Public Library</h1>
-            <div class="menu-head">
-                <nav class="nav-menu">
+    <div class="body-wrapper">
+        <header class="main-header">
+            <div class="container-header">
+                <h1>Brooklyn Public Library</h1>           
+                <nav class="nav-menu" id="nav-menu">
                     <ul class="menu">
-                        <li class="menu-element"><a href="#About">About</a></li>
-                        <li class="menu-element"><a href="#Favorites">Favorites</a></li>
-                        <li class="menu-element"><a href="#CofeeShop">Coffee shop</a></li>
-                        <li class="menu-element"><a href="#Contacts">Contacts</a></li>
-                        <li class="menu-element"><a href="#LibraryCard">Library Card</a></li>
+                        <li class="menu-element"><a href="#About" id="link-menu-element">About</a></li>
+                        <li class="menu-element"><a href="#Favorites" id="link-menu-element">Favorites</a></li>
+                        <li class="menu-element"><a href="#CofeeShop" id="link-menu-element">Coffee shop</a></li>
+                        <li class="menu-element"><a href="#Contacts" id="link-menu-element">Contacts</a></li>
+                        <li class="menu-element"><a href="#LibraryCard" id="link-menu-element">Library Card</a></li>
                     </ul>
                 </nav>
                 <div class="user-account">
                     <a href="#" class="logo"><span class="ico_profile"></span></a>
                 </div>
+                <div class="dropMenu">
+                    <h5 class="profile">Profile</h5>
+                    <div class="no auth">
+                        <button class="btn_profile log-in">Log In</button>
+                        <button class="btn_profile register">Register</button>
+                    </div>
+                    <div class="with auth">
+                        <button class="btn_profile my-profile">My profile</button>
+                        <button class="btn_profile log-out">Log Out</button>
+                    </div>
+                </div>
+                <button class="header__burger-btn" id="burger">
+                    <span></span><span></span><span></span>
+                </button> 
             </div>
-        </div>
-    </header>
-    <section class="Welcome">    
-        <div class="container-welcome">
+        </header>
+        <section class="Welcome"> 
             <div class="welcome-content">
                 <div class="welcom-text">
                     Welcome&nbsp;<br/>to the Brooklyn Library
                 </div>
             </div>
-        </div> 
-    </section>
-   
-    <div class="wrapper">
+        </section>
+    
+        
         <main class="main">
             <section class="About">
                 <div class="section-title">
@@ -51,9 +62,11 @@
                 </div>
                 <p class="text-about">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
                 <div class="about-gallery">
-                    <img src="./assets/img/photo1-about.jpg" alt="Photo The Brooklyn Library" class="img_about-gallery">
-                    <img src="./assets/img/photo2-about.jpg" alt="Photo The Brooklyn Library" class="img_about-gallery">
-                    <img src="./assets/img/photo3-about.jpg" alt="Photo The Brooklyn Library" class="img_about-gallery">
+                    <span class="carret_left"></span>
+                    <img  src="./assets/img/photo1-about.jpg" alt="Photo The Brooklyn Library" class="img_about-gallery">
+                    <img  src="./assets/img/photo2-about.jpg" alt="Photo The Brooklyn Library" class="img_about-gallery gallery-tablet">
+                    <img  src="./assets/img/photo3-about.jpg" alt="Photo The Brooklyn Library" class="img_about-gallery gallery-tablet">
+                    <span class="carret_right"></span>
                 </div>
                 <div class="carousel-wrapper">
                     <div class="carousel_pagination">
@@ -64,6 +77,12 @@
                             <button class="dot"></button>
                         </div>
                         <div class="box">
+                            <button class="dot"></button>
+                        </div>
+                        <div class="box hide">
+                            <button class="dot"></button>
+                        </div>
+                        <div class="box hide">
                             <button class="dot"></button>
                         </div>
                     </div>
@@ -395,9 +414,9 @@
                         <p class="find-card__name">Find your Library card</p>
                         <form action="#" class="card-form">
                             <div class="card-bg">
-                              <p class="card-bg__name">Brooklyn Public Library</p>
-                              <input class="card-bg__input" type="text" placeholder="Reader's name">
-                              <input class="card-bg__input" type="number" placeholder="Card number">
+                            <p class="card-bg__name">Brooklyn Public Library</p>
+                            <input class="card-bg__input" type="text" placeholder="Reader's name">
+                            <input class="card-bg__input" type="number" placeholder="Card number">
                             </div>
                             <button class="card-bg__submit-button" type="submit" value="Check the card">Check the card</button>
                         </form>
@@ -405,7 +424,7 @@
                     <div class="get-card">
                         <div class="get-card__info">
                             <p class="get-card__name">Get a reader card</p>                      
-                            <p class="get-card__text">You will be able to see a reader card after<br> logging into account or you can register a new<br> account</p>
+                            <p class="get-card__text">You will be able to see a reader card after logging into account or you can register a new account</p>
                         </div>
                         <div class="get-card__button">
                             <button class="get-card-btm">Sign Up</button>
@@ -415,38 +434,40 @@
                 </div>
             </section>       
         </main>
+        
+        <footer class="main-footer">
+        <div class="conteiner-footer">
+            <div class="footer-top">
+                <div class="footer-top__left">
+                    <address class="footer-address">
+                        <a href="https://goo.gl/maps/jD7S8wUsDyZdiZkg8" class="link-map">286 Cadman Plaza, New York,<br> NY 11238, United States</a>
+                    </address>
+                    <ul class="footer-social">
+                        <li><a href="http://www.twitter.com/bklynlibrary" target="_blank">
+                            <img src="./assets/img/u_twitter.svg" alt="Twitter" class="twitter">
+                        </a></li>
+                        <li><a href="http://www.instagram.com/bklynlibrary" target="_blank">
+                            <img src="./assets/img/u_instagram.svg" alt="Instagram" class="instagram">
+                        </a></li>
+                        <li><a href="http://www.facebook.com/brooklynpubliclibrary" target="_blank">
+                            <img src="./assets/img/u_facebook.svg" alt="Facebook" class="facebook">
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="footer-top__right">
+                    <p class="opening-hours">Mon - Fri<br>08:00 am - 07:00 pm</p>
+                    <p class="opening-hours">Sat - Sun<br>10:00 am - 06:00 pm</p>
+                </div>
+            </div> 
+            <div class="footer-line"></div>
+            <div class="footer-bottom">
+                    <p>2023</p>
+                    <a href="https://rs.school/js-stage0/" target="_blank" class="footer-TRSS">The Rolling Scopes School</a>
+                    <a href="https://github.com/Aqualiffe" target="_blank" class="git-name">Aqualiffe</a>
+            </div>
+        </div>         
+        </footer>
     </div>
-    <footer class="main-footer">
-       <div class="conteiner-footer">
-           <div class="footer-top">
-            <div class="footer-top__left">
-                <address class="footer-address">
-                    <a href="https://goo.gl/maps/jD7S8wUsDyZdiZkg8" class="link-map">286 Cadman Plaza, New York,<br> NY 11238, United States</a>
-                </address>
-                <ul class="footer-social">
-                    <li><a href="http://www.twitter.com/bklynlibrary" target="_blank">
-                        <img src="./assets/img/u_twitter.svg" alt="Twitter">
-                    </a></li>
-                    <li><a href="http://www.instagram.com/bklynlibrary" target="_blank">
-                        <img src="./assets/img/u_instagram.svg" alt="Instagram">
-                    </a></li>
-                    <li><a href="http://www.facebook.com/brooklynpubliclibrary" target="_blank">
-                        <img src="./assets/img/u_facebook.svg" alt="Facebook">
-                    </a></li>
-                </ul>
-            </div>
-            <div class="footer-top__right">
-                <p class="opening-hours">Mon - Fri<br>08:00 am - 07:00 pm</p>
-                <p class="opening-hours">Sat - Sun<br>10:00 am - 06:00 pm</p>
-            </div>
-           </div> 
-           <div class="footer-line"></div>
-           <div class="footer-bottom">
-                <p>2023</p>
-                <a href="https://rs.school/js-stage0/" target="_blank" class="footer-TRSS">The Rolling Scopes School</a>
-                <a href="https://github.com/Aqualiffe" target="_blank">Aqualiffe</a>
-           </div>
-       </div>         
-    </footer>    
+    <script src="./index.js"></script>
   </body>
 </html>

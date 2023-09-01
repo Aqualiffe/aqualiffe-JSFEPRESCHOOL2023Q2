@@ -1,0 +1,74 @@
+.dropMenu {
+    position: absolute;
+    right: 20px;
+    top: 59px;
+    background-color: #fff;
+    width: 80px;
+    height: 115px;
+    border: 1px;
+    display: none;
+}
+
+.dropMenu.open {
+    display: block;
+}
+
+.profile {
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; 
+    text-align: center;
+    margin-top: 5px;
+
+}
+
+.profile::after {
+    content: "";
+    display: block;
+    width: 40px;
+    flex-shrink: 0;
+    border-bottom: 1px solid #BB945F;;
+    margin: 0px auto 0px auto;    
+}
+.auth {
+    margin-top: 15px;
+    align-items: center;    
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn_profile {    
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */
+    border: none;
+    background: #fff;
+    padding: 0;
+}
+
+.no  {
+    display: flex;
+}
+
+.with {
+    display: none;
+}
+
+.ico_profile:hover {
+    filter: brightness(0) saturate(100%) invert(61%) sepia(30%) saturate(590%) hue-rotate(355deg) brightness(95%) contrast(82%);
+    -webkit-filter: brightness(0) saturate(100%) invert(61%) sepia(30%) saturate(590%) hue-rotate(355deg) brightness(95%) contrast(82%);
+} 
+
+@media (max-width: 1024px) {
+    .dropMenu {
+        right: 105px;
+    }
+}

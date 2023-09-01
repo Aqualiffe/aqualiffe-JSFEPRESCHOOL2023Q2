@@ -1,34 +1,72 @@
 console.log(`
-Всего: 100 \n
-1. Вёрстка валидная +10.\n
-2. Вёрстка семантическая. +16
-\t  В коде страницы присутствуют следующие элементы (указано минимальное количество, может быть больше):
-\t   -<header>, <main>, <footer> +2.
-\t   -шесть элементов <section> (по количеству секций) +2.
-\t   -только один заголовок <h1> +2.
-\t   -пять заголовков <h2> +2.
-\t   -один элемент <nav> (панель навигации в хедере) +2.
-\t   -два списка ul > li > a (панель навигации, ссылки на соцсети в футере) +2.
-\t   -семь кнопок <button> +2.
-\t   -два инпута <input> +2.\n
-3. Вёрстка соответствует макету +54
-\t  - блок <header> +8.
-\t  - секция Welcome +4.
-\t  - секция About +6.
-\t  - секция Favorites +8.
-\t  - секция CoffeeShop +6.
-\t  - секция Contacts +6.
-\t  - секция LibraryCard +8.
-\t  - блок <footer> +8.\n
-4.Общие требования к верстке +20
-\t  -для построения сетки используются флексы или гриды (display: flex... или display: grid...) +2.
-\t  -при уменьшении масштаба страницы браузера вся вёрстка размещается по центру +2.
-\t  -иконки добавлены в формате .svg.  +2.
-\t  -изображения добавлены в формате .jpg (.jpeg) или .png +2.
-\t  -есть favicon +2. 
-\t  -плавная прокрутка по якорям +2
-\t  -в футере название ссылки Username заменено и ведет на GitHub студента +2.
-\t  -в футере ссылка The Rolling Scopes School ведет на страницу курса https://rs.school/js-stage0/ +2.
-\t  -интерактивность элементов согласно макету. +2.
-\t  -плавное изменение внешнего вида элемента при наведении и клике не влияет на соседние элементы +2.
+Всего: 50 \n
+1. Вёрстка соответствует макету. Ширина экрана 768px +26.
+\t блок <header> +2
+\t секция Welcome +2
+\t секция About +4.
+\t секция Favorites +2
+\t Сделать кнопку own для последней книги +2
+\t секция CoffeShop +4
+\t секция Contacts +4
+\t секция LibraryCard +4
+\t блок <footer> + 2 \n
+2. Нет полосы прокрутки, весь контент сохраняется +12 \n
+3. На ширине экрана 768рх реализовано адаптивное меню +12
 `)
+
+/* Бургер меню */
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("burger").addEventListener("click", function() {
+        document.querySelector(".main-header").classList.toggle("open")
+    })
+})
+
+/*  document.querySelector(".main-header").classList.remove("open")*/ 
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("nav-menu").addEventListener("click", function(e) {
+        e.isClick = true;   
+        // console.log('клик внутри1');
+    })
+})
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("burger").addEventListener("click", function(e) {
+        e.isClick = true;   
+        // console.log('клик внутри2');
+    })
+})
+const menuItems = document.querySelectorAll('.menu-element');
+
+menuItems.forEach(e => {
+    e.addEventListener("click", function() {
+        document.querySelector(".main-header").classList.toggle("open")
+        // console.log("клик по ссылке")
+    })
+})
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.addEventListener("click", function(e) {
+        if (e.isClick == true) return;
+        document.querySelector(".main-header").classList.remove("open");        
+        // console.log('клик внe блока');
+    })
+})
+
+/* Profile menu*/
+const dropMenu = document.querySelector(".dropMenu");
+const logo = document.querySelector(".logo");
+
+document.addEventListener("DOMContentLoaded", function() {
+    logo.addEventListener("click", function() {
+       // console.log("клик по лого");
+        dropMenu.classList.toggle("open");
+    })
+})
+
+document.addEventListener('click', function(e) {
+    const clickMenu=e.composedPath().includes(dropMenu);
+    const clickLogo=e.composedPath().includes(logo);
+    if (!clickMenu & !clickLogo) {
+        dropMenu.classList.remove("open");
+    }
+})
