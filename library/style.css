@@ -695,6 +695,7 @@ h3 {
     border: 1px solid #FFF;
     margin-bottom: 25px;
     flex-shrink: 0; 
+    outline: none;
 }
 
 .card-bg__input::placeholder {
