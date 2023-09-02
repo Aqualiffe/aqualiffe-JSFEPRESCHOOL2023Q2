@@ -68,13 +68,46 @@
 } 
 
 /* модальные */
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    cursor: pointer;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal__x {
+    background-image: url('./assets/img/close_btn.svg');
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.modal__x:hover {
+    filter: brightness(0) saturate(100%) invert(61%) sepia(30%) saturate(590%) hue-rotate(355deg) brightness(95%) contrast(82%);
+    -webkit-filter: brightness(0) saturate(100%) invert(61%) sepia(30%) saturate(590%) hue-rotate(355deg) brightness(95%) contrast(82%);
+}
 
 .modal_logIn {
+    position: relative;
+    margin: auto;
     width: 250px;
     height: 262px;
     background: #fff;
     padding: 20px 15px;
-
+    cursor: default;
+    /* visibility: hidden;
+    display: none; */
 }
 
 .modal-box {
@@ -155,6 +188,8 @@
     height: 382px;
     background: #fff;
     padding: 20px 15px;
+    display: none;
+    
 }
 
 .modal-input {
@@ -318,6 +353,8 @@
     flex-direction: column;
     margin-left: 31px;
     gap: 10px;
+    /* overflow-x: auto; */
+    
 }
 
 .rented_book_item {
@@ -371,6 +408,15 @@
 .icon-copy:hover {    
     filter: brightness(0) saturate(100%) invert(61%) sepia(30%) saturate(590%) hue-rotate(355deg) brightness(95%) contrast(82%);
     -webkit-filter: brightness(0) saturate(100%) invert(61%) sepia(30%) saturate(590%) hue-rotate(355deg) brightness(95%) contrast(82%);
+}
+
+.btn_profile:hover, .btn_logIn:hover, .btn_signUp:hover {
+    background-color: #BB945F;
+    border: 0;
+}
+
+.modal-link:hover {
+    color: #BB945F;
 }
 
 @media (max-width: 1024px) {
