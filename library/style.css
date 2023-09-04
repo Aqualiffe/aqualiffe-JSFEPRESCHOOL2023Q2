@@ -8,6 +8,7 @@ body {
     background-color: #8E8E8E;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 .body-wrapper {
@@ -769,7 +770,7 @@ h3 {
     gap: 20px;
 }
 
-.get-card-btm {
+.get-card-btn {
     width: 75px; 
     height: 30px;
     border-radius: 2px; 
@@ -784,7 +785,7 @@ h3 {
     cursor: pointer;
 }
 
-.get-card-btm:hover {
+.get-card-btn:hover {
     background-color: #BB945F;
     border: 0;
 }

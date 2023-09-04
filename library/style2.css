@@ -41,6 +41,7 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    display: flex;
 }
 
 .btn_profile {    
@@ -56,11 +57,11 @@
     padding: 0;
 }
 
-.no  {
+/* .no {
     display: flex;
-}
+} */
 
-.with {
+.close {
     display: none;
 }
 
@@ -202,6 +203,7 @@
     animation-duration: 1s;
 }
 
+
 .modal-input {
     display: block;
     width: 200px;
@@ -210,13 +212,19 @@
     border: 1px solid #BB945F;
     border-color: #BB945F;
     outline: none;
+    padding: 0;
+    box-sizing: content-box;
 }
 
 /* modal_profile */
 
 .modal_profile {
+    position: relative;
+    margin: auto;
+    cursor: default;
+    animation-name: sizeUp;
+    animation-duration: 1s;
     display: flex;
-
     width: 600px;
     height: 400px;
     background: #FFF;
@@ -437,11 +445,105 @@
 /* modal buy a card */
 
 .modal_buy-a-card {
-    width: 650px;
+    position: relative;
+    margin: auto;
+    display: flex;
+    width: 640px;
     height: 540px;
-    background: #FFF;   
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
 }
 
+.top-buy-a-card {
+    display: flex;
+    
+    height: 60px;    
+    background-color: #0C0C0E;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-buy-a-card {    
+    color: #FFF;    
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; 
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+
+}
+
+.modal__x.x-buy-a-card {
+    filter: invert(100%);
+    top: 25px;
+    right: 25px;    
+}
+
+.buy-a-card_info {
+    display: flex;
+    justify-content: space-between;    
+    gap: 40px;
+    padding: 30px 35px 40px 35px;
+}
+
+.buy-a-card_form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+    height: 410px;
+    text-align: left;
+    justify-content: space-around;
+}
+
+.modal-text.Bank-card {
+    margin-top: 0px;
+}
+
+.buy-a-card_text {
+    width: 330px;
+    height: 160px;
+
+}
+
+.buy-a-card_text p {
+    color: #8E8E8E;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; 
+    letter-spacing: 2px;
+}
+.modal-input.cvc, .modal-input.ex-code1, .modal-input.ex-code2 {
+    width: 45px;
+    height: 20px;
+} 
+
+.modal-input.ex-code1, .modal-input.ex-code2 {
+    display: inline;
+    margin-right: 10px;
+}
+
+
+.btn_card {
+    margin-top: 20px;
+    margin-right: 25px;
+    margin-left: 0;
+}
+
+.price {
+    color: #0C0C0E;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; 
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
 
 /* LibraryCard_login */
 
@@ -462,6 +564,9 @@
     letter-spacing: 0.2px;
 }
 
+.close {
+    display: none;
+}
 
 @keyframes sizeUp {
     0% {
@@ -479,42 +584,4 @@
     .dropMenu {
         right: 105px;
     }
-}
-
-.tooltip {
-    position: relative;
-    display: inline-block;
-}
-
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 140px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    bottom: 150%;
-    left: 50%;
-    margin-left: -75px;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
 }

@@ -32,11 +32,11 @@
                 </div>
                 <div class="dropMenu">
                     <h5 class="profile">Profile</h5>
-                    <div class="no auth">
+                    <div class="auth with">
                         <button class="btn_profile btn_menu_log-in">Log In</button>
                         <button class="btn_profile btn_menu_register">Register</button>
                     </div>
-                    <div class="with auth">
+                    <div class="auth no close">
                         <button class="btn_profile btn_menu_my-profile">My profile</button>
                         <button class="btn_profile btn_menu_log-out">Log Out</button>
                     </div>
@@ -51,9 +51,9 @@
                 <h5 class="modal-title">Login</h5>
                 <div class="modal-box">        
                     <p class="modal-text">E-mail or readers card</p>
-                    <input type="email" name="" id="" class="modal-input">    
+                    <input type="email" name="email-logIn" id="email" class="modal-input">    
                     <p class="modal-text">Password</p>
-                    <input type="password" name="" id="" class="modal-input">
+                    <input type="password" name="password-logIn" id="password" class="modal-input">
                     <button class="btn_logIn">Log In</button>
                     <p class="modal-text_info">Don’t have an account? <a href="" class="modal-link">Register</a></p>
                 </div>
@@ -69,15 +69,89 @@
                     <p class="modal-text">Last name</p>
                     <input type="text" class="modal-input">
                     <p class="modal-text">E-mail or readers card</p>
-                    <input type="email" name="" id="" class="modal-input">    
+                    <input type="email" name="email-Reg" id="email-Reg" class="modal-input">    
                     <p class="modal-text">Password</p>
-                    <input type="password" name="" id="" class="modal-input">
+                    <input type="password" name="password-Reg" id="password-Reg" class="modal-input">
                     <button class="btn_signUp">Sign Up</button>
                     <p class="modal-text_info">Already have an account? <a href="" class="modal-link">Login</a></p>
                 </div>
                 <button class="modal__x x-reg"></button>
             </div>
         </div>
+        <div class="modal modalProfile">
+            <div class="modal_profile">
+                <div class="name-box">
+                <div class="img-name">
+                    <p class="img_user-name">JD</p>
+                </div> 
+                <div class="text-name">
+                    <p class="user-name">John Doe</p>
+                </div>
+                </div>
+                <div class="my-profile-box">
+                    <h5 class="my-profile-name">My profile</h5>
+                    <div class="profile-box">
+                        <div class="card-profile">
+                            <div class="profile-info">
+                                <p class="visits">Visits</p>
+                                <img src="./assets/img/Union.svg" alt="Visits" class="info-img">
+                                <p class="items-visits qty">23</p>
+                            </div> 
+                            <div class="profile-info">
+                                <p class="bonuses">Bonuses</p>
+                                <img src="./assets/img/Star1.svg" alt="Bonuses" class="info-img">
+                                <p class="items-bonuses qty">1240</p>
+                            </div> 
+                            <div class="profile-info">
+                                <p class="books">Books</p>
+                                <img src="./assets/img/book.svg" alt="Books" class="info-img">
+                                <p class="items-books qty">2</p>
+                            </div> 
+                        </div>
+                        <div class="rented_book">
+                            <h6 class="rented-books-name">Rented books</h6>
+                            <ul class="rented_book_list">
+                                <li class="rented_book_item">The Last Queen, Clive Irving</li>
+                                <li class="rented_book_item">Dominicana, Angie Cruz</li>
+                            </ul>
+                        </div>
+                        <div class="profile_card-numbers">
+                            <span class="text_card-number">Card number</span><span class="profile_CN" id="profile_CN">F00234030</span><button onclick="Copy('profile_CN')" id="btn-copy"><span class="icon-copy" title="Copy to clipboard"></span></button>
+                        </div>
+                    </div>
+                </div>
+                <button class="modal__x x-profile"></button>
+            </div>
+        </div>
+        <div class="modal modal-buy-a-card">
+            <div class="modal_buy-a-card">
+                <div class="top-buy-a-card">
+                    <p class="title-buy-a-card">Buy a library card</p>
+                    <button class="modal__x x-buy-a-card"></button>
+                </div>
+                <div class="buy-a-card_info">
+                    <div class="buy-a-card_form">
+                        <p class="modal-text Bank-card">Bank card number</p>
+                        <input type="text" class="modal-input">
+                        <p class="modal-text">Expiration</p>
+                        <p><input type="text" class="modal-input ex-code1"><input type="text" class="modal-input ex-code2"></p>
+                        <p class="modal-text">CVC</p>
+                        <input type="text" class="modal-input cvc">
+                        <p class="modal-text">Cardholder name</p>
+                        <input type="text" class="modal-input">
+                        <p class="modal-text">Postal code</p>
+                        <input type="text" class="modal-input">
+                        <p class="modal-text">City / Town</p>
+                        <input type="text" class="modal-input city">
+                        <p"><button class="book_button btn_card">Buy</button><span class="price">$ 25.00</span></p>
+                    </div>
+                    <div class="buy-a-card_text">
+                        <p>If you are live, work, attend school, or pay property taxes in New York State, you can get a $25 digital library card right now using this online form. Visitors to New York State can also use this form to apply for a temporary card.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <section class="Welcome"> 
             <div class="welcome-content">
                 <h2 class="welcom-text">
@@ -86,8 +160,6 @@
             </div>
         </section>
 
-    
-        
         <main class="main">
             <section class="About">
                 <div class="section-title">
@@ -105,7 +177,7 @@
                 <div class="carousel-wrapper">
                     <div class="carousel_pagination">
                         <div class="box">
-                            <button class="dot active"></button>                            
+                            <button class="dot"></button>                            
                         </div>
                         <div class="box">
                             <button class="dot"></button>
@@ -461,12 +533,56 @@
                             <p class="get-card__text">You will be able to see a reader card after logging into account or you can register a new account</p>
                         </div>
                         <div class="get-card__button">
-                            <button class="get-card-btm">Sign Up</button>
-                            <button class="get-card-btm">Log in</button>
+                            <button class="get-card-btn btn_card_register">Sign Up</button>
+                            <button class="get-card-btn btn_card_log-in">Log in</button>                           
                         </div>
                     </div>
                 </div>
-            </section>       
+            </section>
+            <div class="LibraryCard_login close">
+                <div class="section-title">
+                    <h2 id="LibraryCard">Digital Library Cards</h2>
+                    <div class="h2-line"></div>
+                </div>
+                <div class="card-info">
+                    <div class="find-card">
+                        <p class="find-card__name">Your Library card</p>
+                        <form action="#" class="card-form">
+                            <div class="card-bg">
+                            <p class="card-bg__name">Brooklyn Public Library</p>
+                            <input class="card-bg__input" type="text" placeholder="Reader's name">
+                            <input class="card-bg__input" type="number" placeholder="Card number">
+                            </div>
+                            <div class="card-profile card-profile_logIn">
+                                <div class="profile-info profile-info-card">
+                                    <p class="visits">Visits</p>
+                                    <img src="./assets/img/Union.svg" alt="Visits" class="info-img">
+                                    <p class="items-visits qty">23</p>
+                                </div> 
+                                <div class="profile-info profile-info-card">
+                                    <p class="bonuses">Bonuses</p>
+                                    <img src="./assets/img/Star1.svg" alt="Bonuses" class="info-img">
+                                    <p class="items-bonuses qty">1240</p>
+                                </div> 
+                                <div class="profile-info profile-info-card">
+                                    <p class="books">Books</p>
+                                    <img src="./assets/img/book.svg" alt="Books" class="info-img">
+                                    <p class="items-books qty">2</p>
+                                </div> 
+                            </div>
+                        </form>
+                    </div>
+                    <div class="get-card">
+                        <div class="get-card__info">
+                            <p class="get-card__name">Visit your profile</p>                      
+                            <p class="get-card__text">With a digital library card you get free access to the Library’s wide array of digital resources including e-books, databases, educational resources, and more.</p>
+                        </div>
+                        <div class="get-card__button">                
+                            <button class="get-card-btm">Profile</button>
+                        </div>
+                    </div>
+                </div>
+            </div>   
         </main>
         
         <footer class="main-footer">

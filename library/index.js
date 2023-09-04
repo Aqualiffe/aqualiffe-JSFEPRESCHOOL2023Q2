@@ -89,23 +89,26 @@ const modalControler = ({modalElem, btnOpen, btnClose, activModal}) => {
         const clickModalLogIn=e.composedPath().includes(modalLogIn);
         const clickMenu=e.composedPath().includes(dropMenu);
         const clickLogo=e.composedPath().includes(logo);
-        const clickButtonClose=e.composedPath().includes(buttonModalClose);        
-        if (!clickModalLogIn & !clickLogo & !clickMenu || clickButtonClose) {
+        const clickButtonOpen=e.composedPath().includes(buttonLogIn);      
+        const clickButtonClose=e.composedPath().includes(buttonModalClose);
+        if (!clickButtonOpen & !clickModalLogIn & !clickLogo & !clickMenu || clickButtonClose) {
             modal.classList.remove('open');
-        }
+        } 
     };
 
     const openModal = function() {
-        modal.classList.add('open');
+        modal.classList.add("open");
     };
+
+    document.addEventListener('click', closeModal);
 
     buttonLogIn.addEventListener('click', function(){
         openModal();
         removeDropMenuOpen();
     });
-
-    document.addEventListener('click', closeModal);
 };
+
+
 
 modalControler({
     modalElem: '.modalIn',
@@ -121,8 +124,22 @@ modalControler({
     activModal: '.modal_Register'
 });
 
+modalControler({
+    modalElem: '.modalProfile',
+    btnOpen: '.btn_menu_my-profile',
+    btnClose: '.x-profile',
+    activModal: '.modal_profile'
+});
+
+modalControler({
+    modalElem: '.modalIn',
+    btnOpen: '.btn_card_log-in',
+    btnClose: '.x-log',
+    activModal: '.modal_logIn'
+});
 
 
+// Кнопка копирования
 function Copy(containerid) {
     let textarea = document.createElement('textarea');
     textarea.id = 'temp';
