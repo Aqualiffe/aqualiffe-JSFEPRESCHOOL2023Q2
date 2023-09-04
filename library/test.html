@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="style2.css">     
         <link href="./assets/img/favicon.ico" rel="Icon">
         <meta name="viewport" content="width=device-width">
+        <script src="./index.js" defer></script>
       </head>
 </head>
 <body>
@@ -90,15 +91,62 @@
                 </ul>
             </div>
             <div class="profile_card-numbers">
-                <span class="text_card-number">Card number</span><span class="profile_CN">F00234030</span><span class="icon-copy"></span>
+                <span class="text_card-number">Card number</span><span class="profile_CN" id="profile_CN">F00234030</span><button onclick="Copy('profile_CN')" id="btn-copy"><span class="icon-copy" title="Copy to clipboard"></span></button>
             </div>
         </div>
     </div>
 </div>
 
-<div class="modal_buy-a-card"></div>
 
-<div class="LibraryCard_login"></div>
+<p>---</p>
+<div class="modal_buy-a-card">
+
+</div>
+
+<div class="LibraryCard_login">
+    <div class="section-title">
+        <h2 id="LibraryCard">Digital Library Cards</h2>
+        <div class="h2-line"></div>
+    </div>
+    <div class="card-info">
+        <div class="find-card">
+            <p class="find-card__name">Your Library card</p>
+            <form action="#" class="card-form">
+                <div class="card-bg">
+                <p class="card-bg__name">Brooklyn Public Library</p>
+                <input class="card-bg__input" type="text" placeholder="Reader's name">
+                <input class="card-bg__input" type="number" placeholder="Card number">
+                </div>
+                <div class="card-profile card-profile_logIn">
+                    <div class="profile-info profile-info-card">
+                        <p class="visits">Visits</p>
+                        <img src="./assets/img/Union.svg" alt="Visits" class="info-img">
+                        <p class="items-visits qty">23</p>
+                    </div> 
+                    <div class="profile-info profile-info-card">
+                        <p class="bonuses">Bonuses</p>
+                        <img src="./assets/img/Star1.svg" alt="Bonuses" class="info-img">
+                        <p class="items-bonuses qty">1240</p>
+                    </div> 
+                    <div class="profile-info profile-info-card">
+                        <p class="books">Books</p>
+                        <img src="./assets/img/book.svg" alt="Books" class="info-img">
+                        <p class="items-books qty">2</p>
+                    </div> 
+                </div>
+            </form>
+        </div>
+        <div class="get-card">
+            <div class="get-card__info">
+                <p class="get-card__name">Visit your profile</p>                      
+                <p class="get-card__text">With a digital library card you get free access to the Library’s wide array of digital resources including e-books, databases, educational resources, and more.</p>
+            </div>
+            <div class="get-card__button">                
+                <button class="get-card-btm">Profile</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
