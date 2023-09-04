@@ -14,18 +14,17 @@ console.log(`
 3. На ширине экрана 768рх реализовано адаптивное меню +12
 `)
 
+
+/* Бургер меню */
 const burger = document.getElementById("burger");
 const main_header = document.querySelector(".main-header");
 const menuItems = document.querySelectorAll('.menu-element');
 
-
-/* Бургер меню */
 document.addEventListener("DOMContentLoaded", function() {
     burger.addEventListener("click", function() {
         main_header.classList.toggle("open")
     })
 });
-
 
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("nav-menu").addEventListener("click", function(e) {
@@ -51,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
         main_header.classList.remove("open"); 
     })
 });
+
 
 /* Profile menu*/
 const dropMenu = document.querySelector(".dropMenu");
@@ -91,7 +91,9 @@ const modalControler = ({modalElem, btnOpen, btnClose, activModal}) => {
         const clickLogo=e.composedPath().includes(logo);
         const clickButtonOpen=e.composedPath().includes(buttonLogIn);      
         const clickButtonClose=e.composedPath().includes(buttonModalClose);
-        if (!clickButtonOpen & !clickModalLogIn & !clickLogo & !clickMenu || clickButtonClose) {
+        if (clickButtonOpen) {
+            modal.classList.add("open");
+        } else if (!clickModalLogIn & !clickLogo & !clickMenu || clickButtonClose) {
             modal.classList.remove('open');
         } 
     };
@@ -107,7 +109,6 @@ const modalControler = ({modalElem, btnOpen, btnClose, activModal}) => {
         removeDropMenuOpen();
     });
 };
-
 
 
 modalControler({
@@ -138,6 +139,13 @@ modalControler({
     activModal: '.modal_logIn'
 });
 
+modalControler({
+    modalElem: '.modalReg',
+    btnOpen: '.btn_card_register',
+    btnClose: '.x-reg',
+    activModal: '.modal_Register'
+});
+
 
 // Кнопка копирования
 function Copy(containerid) {
@@ -151,3 +159,7 @@ function Copy(containerid) {
     document.execCommand('copy');
     document.body.removeChild(textarea);
 }
+
+
+// Слайдер
+

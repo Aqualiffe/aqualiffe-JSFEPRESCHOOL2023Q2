@@ -255,14 +255,29 @@ h3 {
     word-wrap: break-word;
 }
 
+.gallery-conteiner {
+    max-width: 1400px;
+    height: 560px;
+    overflow-x: hidden;
+    position: relative;
+    margin: 0px auto 35px auto; 
+}
+
 .about-gallery {
+    position: absolute;
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
+    gap: 25px;    
+    top: 0px;
+    left: 0px;
+    transition: 0.3s;
 }
 
 .img_about-gallery {
     width: 450px; 
     height: 560px;
+    flex-shrink: 0;
+    object-fit: cover;
 }
 
 .carousel-wrapper {
@@ -892,25 +907,17 @@ h3 {
 }
 
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     .favorites-conteiner {
         flex-direction: column;
         align-content: center;
         align-items: center;
     }
 
-    .about-gallery {
-        justify-content: center;
-        align-items: center;
-    }
+    .gallery-conteiner {
+        max-width: 950px;
+      }
 
-    .gallery-tablet {
-        display: none;
-    }
-
-    .img_about-gallery {
-        margin: 0 58px;
-    }
 
     .carret_left, .carret_right {
         display: inline-block;
@@ -996,6 +1003,10 @@ h3 {
         margin-right: 40px;        
     }
 
+    .gallery-conteiner {
+        max-width: 450px;
+      }
+
     .main-header.open .nav-menu {
         transform: translateX(-100%);
         visibility: visible;
@@ -1014,6 +1025,7 @@ h3 {
 }
 
 @media (max-width: 750px) {
+
     .seasons {
         width: 100%;
         gap: 25px;
