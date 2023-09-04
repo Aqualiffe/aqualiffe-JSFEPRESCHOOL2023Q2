@@ -74,6 +74,7 @@
     background-color: rgba(0, 0, 0, 0.8);
     display: none;
     cursor: pointer;
+    z-index: 3;
 }
 
 .modal.open {
@@ -106,8 +107,6 @@
     background: #fff;
     padding: 20px 15px;
     cursor: default;
-    /* visibility: hidden;
-    display: none; */
 }
 
 .modal-box {
@@ -184,12 +183,13 @@
 }
 
 .modal_Register {
+    position: relative;
+    margin: auto;
     width: 250px;
     height: 382px;
     background: #fff;
-    padding: 20px 15px;
-    display: none;
-    
+    padding: 20px 15px;    
+    cursor: default;
 }
 
 .modal-input {

@@ -139,7 +139,7 @@ h3 {
     width: 28px;
     height: 28px;
     margin: 31px 0px 31px 40px;
-    z-index: 3;
+    
 }
 
 .ico_profile {
@@ -159,7 +159,7 @@ h3 {
     outline: none;
     background-color: #0C0C0E;
     cursor: pointer;
-    z-index: 3;
+    
 }
 
 .header__burger-btn span {
@@ -169,7 +169,7 @@ h3 {
     height: 2px;
     background-color: #fff;
     left: 0px;
-    z-index: 3;
+    
     transition: background-color 0.3s, opacity .5s, transform .5s;
     will-change: transform;
 }

@@ -32,12 +32,12 @@
                 <div class="dropMenu">
                     <h5 class="profile">Profile</h5>
                     <div class="no auth">
-                        <button class="btn_profile log-in">Log In</button>
-                        <button class="btn_profile register">Register</button>
+                        <button class="btn_profile btn_menu_log-in">Log In</button>
+                        <button class="btn_profile btn_menu_register">Register</button>
                     </div>
                     <div class="with auth">
-                        <button class="btn_profile my-profile">My profile</button>
-                        <button class="btn_profile log-out">Log Out</button>
+                        <button class="btn_profile btn_menu_my-profile">My profile</button>
+                        <button class="btn_profile btn_menu_log-out">Log Out</button>
                     </div>
                 </div>
                 <button class="header__burger-btn" id="burger">
@@ -45,7 +45,7 @@
                 </button> 
             </div>
         </header>
-        <div class="modal">
+        <div class="modal modalIn">
             <div class="modal_logIn">
                 <h5 class="modal-title">Login</h5>
                 <div class="modal-box">        
@@ -56,22 +56,25 @@
                     <button class="btn_logIn">Log In</button>
                     <p class="modal-text_info">Don’t have an account? <a href="" class="modal-link">Register</a></p>
                 </div>
-                <button class="modal__x"></button>
+                <button class="modal__x x-log"></button>
             </div>
         </div>
-        <div class="modal_Register">
-            <h5 class="modal-title">Register</h5>
-            <div class="modal-box">        
-                <p class="modal-text">First name</p>
-                <input type="text" class="modal-input">
-                <p class="modal-text">Last name</p>
-                <input type="text" class="modal-input">
-                <p class="modal-text">E-mail or readers card</p>
-                <input type="email" name="" id="" class="modal-input">    
-                <p class="modal-text">Password</p>
-                <input type="password" name="" id="" class="modal-input">
-                <button class="btn_signUp">Sign Up</button>
-                <p class="modal-text_info">Already have an account? <a href="" class="modal-link">Login</a></p>
+        <div class="modal modalReg">
+            <div class="modal_Register">
+                <h5 class="modal-title">Register</h5>
+                <div class="modal-box">        
+                    <p class="modal-text">First name</p>
+                    <input type="text" class="modal-input">
+                    <p class="modal-text">Last name</p>
+                    <input type="text" class="modal-input">
+                    <p class="modal-text">E-mail or readers card</p>
+                    <input type="email" name="" id="" class="modal-input">    
+                    <p class="modal-text">Password</p>
+                    <input type="password" name="" id="" class="modal-input">
+                    <button class="btn_signUp">Sign Up</button>
+                    <p class="modal-text_info">Already have an account? <a href="" class="modal-link">Login</a></p>
+                </div>
+                <button class="modal__x x-reg"></button>
             </div>
         </div>
         <section class="Welcome"> 

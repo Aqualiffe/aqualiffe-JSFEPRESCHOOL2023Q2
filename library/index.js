@@ -17,11 +17,7 @@ console.log(`
 const burger = document.getElementById("burger");
 const main_header = document.querySelector(".main-header");
 const menuItems = document.querySelectorAll('.menu-element');
-const dropMenu = document.querySelector(".dropMenu");
-const logo = document.querySelector(".logo");
-const buttonLogIn = document.querySelector('.log-in');
-const modal = document.querySelector('.modal');
-const modalLogIn = document.querySelector('.modal_logIn');
+
 
 /* Бургер меню */
 document.addEventListener("DOMContentLoaded", function() {
@@ -61,63 +57,70 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 /* Profile menu*/
+const dropMenu = document.querySelector(".dropMenu");
+const logo = document.querySelector(".logo");
 
 const removeDropMenuOpen = function() {
          dropMenu.classList.remove("open");
 };
 
-
+const openDropMenu = () => {
+    dropMenu.classList.toggle("open");
+};
 document.addEventListener("DOMContentLoaded", function() {
-    logo.addEventListener("click", function() {
-       // console.log("клик по лого");
-        dropMenu.classList.toggle("open");
-    })
-})
+    logo.addEventListener("click", openDropMenu)
+});
 
-
-document.addEventListener('click', function(e) {
+const closeDropMenu = (e) => {
     const clickMenu=e.composedPath().includes(dropMenu);
     const clickLogo=e.composedPath().includes(logo);
     if (!clickMenu & !clickLogo) {
         dropMenu.classList.remove("open");
     }
-});
+};
+
+document.addEventListener('click', closeDropMenu);
 
 
 // modal
+const modalControler = ({modalElem, btnOpen, btnClose, activModal}) => {
+    const buttonLogIn = document.querySelector(btnOpen);
+    const modal = document.querySelector(modalElem);
+    const modalLogIn = document.querySelector(activModal);
+    const buttonModalClose = document.querySelector(btnClose);
 
+    const closeModal = function(e) {
+        const clickModalLogIn=e.composedPath().includes(modalLogIn);
+        const clickMenu=e.composedPath().includes(dropMenu);
+        const clickLogo=e.composedPath().includes(logo);
+        const clickButtonClose=e.composedPath().includes(buttonModalClose);        
+        if (!clickModalLogIn & !clickLogo & !clickMenu || clickButtonClose) {
+            modal.classList.remove('open');
+        }
+    };
 
+    const openModal = function() {
+        modal.classList.add('open');
+    };
 
-// modal.style.cssText = `
-//     displey: flex;
-//     visibility: hidden;
-//     opacity: 0;
-//     transition: opacity 300ms easy-in-out;
-// `;
- 
-// const closeModal = function(e) {
-//     const target = e.target;
-//     if (target === modal) {
-//        modal.classList.add('close');
-//     }
-// };
+    buttonLogIn.addEventListener('click', function(){
+        openModal();
+        removeDropMenuOpen();
+    });
 
-
-const openModal = function() {
-    modal.classList.add('open');
-    // modal.style.visibility = 'visible';
-    // modal.style.opacity = 1;
+    document.addEventListener('click', closeModal);
 };
 
-buttonLogIn.addEventListener('click', function(){
-    openModal();
-    removeDropMenuOpen();
+modalControler({
+    modalElem: '.modalIn',
+    btnOpen: '.btn_menu_log-in',
+    btnClose: '.x-log',
+    activModal: '.modal_logIn'
 });
 
-document.addEventListener('click', function(e) {
-    const clickModal=e.composedPath().includes(modal);
-    console.log(clickModal);
-    if (!clickModal) {
-        modal.classList.remove('open');
-    }
+modalControler({
+    modalElem: '.modalReg',
+    btnOpen: '.btn_menu_register',
+    btnClose: '.x-reg',
+    activModal: '.modal_Register'
 });
