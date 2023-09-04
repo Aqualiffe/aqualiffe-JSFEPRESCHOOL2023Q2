@@ -24,37 +24,33 @@ document.addEventListener("DOMContentLoaded", function() {
     burger.addEventListener("click", function() {
         main_header.classList.toggle("open")
     })
-})
+});
 
-/*  document.querySelector(".main-header").classList.remove("open")*/ 
+
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("nav-menu").addEventListener("click", function(e) {
-        e.isClick = true;   
-        // console.log('клик внутри1');
+        e.isClick = true;
     })
-})
+});
 
 document.addEventListener("DOMContentLoaded", function() {
     burger.addEventListener("click", function(e) {
-        e.isClick = true;   
-        // console.log('клик внутри2');
+        e.isClick = true; 
     })
-})
+});
 
 menuItems.forEach(e => {
     e.addEventListener("click", function() {
-        main_header.classList.toggle("open")
-        // console.log("клик по ссылке")
+        main_header.classList.toggle("open")        
     })
-})
+});
 
 document.addEventListener("DOMContentLoaded", function() {
     document.body.addEventListener("click", function(e) {
         if (e.isClick == true) return;
-        main_header.classList.remove("open");        
-        // console.log('клик внe блока');
+        main_header.classList.remove("open"); 
     })
-})
+});
 
 /* Profile menu*/
 const dropMenu = document.querySelector(".dropMenu");
@@ -124,3 +120,17 @@ modalControler({
     btnClose: '.x-reg',
     activModal: '.modal_Register'
 });
+
+
+
+function Copy(containerid) {
+    let textarea = document.createElement('textarea');
+    textarea.id = 'temp';
+    textarea.style.height = 0;
+    document.body.appendChild(textarea);
+    textarea.value = document.getElementById(containerid).innerText;
+    let selector = document.querySelector('#temp');
+    selector.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+}

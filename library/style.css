@@ -674,7 +674,7 @@ h3 {
     background: #BB945F;
     align-items: left;
     padding: 20px 20px 0px 20px;
-    margin-bottom: 20px;
+    
 }
 
 .card-bg__name {
@@ -725,6 +725,7 @@ h3 {
     letter-spacing: 1px;
     transition-duration: 0.3s;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 .card-bg__submit-button:hover {
