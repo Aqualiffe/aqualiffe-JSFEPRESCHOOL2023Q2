@@ -256,28 +256,39 @@ h3 {
 }
 
 .gallery-conteiner {
-    max-width: 1400px;
-    height: 560px;
-    overflow-x: hidden;
     position: relative;
-    margin: 0px auto 35px auto; 
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: #fff;
 }
 
+
 .about-gallery {
-    position: absolute;
+    max-width: 1400px;
+    height: 560px;
+    overflow: hidden;
+    position: relative;
+    margin: 0px auto 35px auto;
+}
+
+.gallery-imgs {
     display: flex;
     justify-content: start;
-    gap: 25px;    
+    gap: 25px;
+    position: absolute;
     top: 0px;
     left: 0px;
-    transition: 0.3s;
+    transition: transform 0.5s ease-in-out;;
 }
+
 
 .img_about-gallery {
     width: 450px; 
     height: 560px;
     flex-shrink: 0;
     object-fit: cover;
+    flex-shrink: 0;
+    max-width: 100%;
 }
 
 .carousel-wrapper {
@@ -295,19 +306,27 @@ h3 {
 }
 
 .carret_left, .carret_right {
+    position: absolute;
+    display: none;
     width: 24px;
     height: 24px;
-    display: none;
+    border: none;
+    background-color: #fff;    
 }
 
 .carret_left {
+    top: 50%;
+    left: -58px;
     background-image: url(./assets/img/Carret_Left.svg);
+    
 }
 
 .carret_right {
+    right: -58px;
+    top: 50%;
     background-image: url(./assets/img/Carret_Right.svg);
+    
 }
-
 
 
 .box {
@@ -338,9 +357,11 @@ h3 {
     background-color: #BB945F;
 }
 
-.box.hide {
+
+.box:nth-of-type(4), .box:nth-of-type(5) {
     display: none;
 }
+
 
 .seasons {
     display: flex;
@@ -903,9 +924,13 @@ h3 {
 }
 
 .carret_left:hover, .carret_right:hover  {
-    cursor: pointer;
+    cursor: pointer;    
 }
 
+.carret_left[disabled], .carret_right[disabled] {   
+    cursor: default;
+    opacity: 0.3;
+}
 
 @media (max-width: 1400px) {
     .favorites-conteiner {
@@ -918,13 +943,8 @@ h3 {
         max-width: 950px;
       }
 
-
-    .carret_left, .carret_right {
-        display: inline-block;
-    }
-
-    .box.hide {
-        display: block;
+    .box:nth-of-type(4) {
+        display: flex;
     }
     
     .carousel-wrapper {
@@ -971,6 +991,16 @@ h3 {
 
 @media (max-width: 1024px) {
 
+    .box:nth-of-type(5) {
+        display: flex;
+    }
+
+
+
+    .carret_left, .carret_right {
+        display: block;
+    }
+
     .header__burger-btn {
         display: block;
         
@@ -1003,10 +1033,6 @@ h3 {
         margin-right: 40px;        
     }
 
-    .gallery-conteiner {
-        max-width: 450px;
-      }
-
     .main-header.open .nav-menu {
         transform: translateX(-100%);
         visibility: visible;
@@ -1021,6 +1047,13 @@ h3 {
         flex-direction: column;
         gap: 100px;
     }
+
+    .gallery-conteiner {
+        max-width: 450px;
+       
+      }
+
+
 
 }
 

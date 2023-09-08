@@ -568,14 +568,13 @@
     display: none;
 }
 
+
 @keyframes sizeUp {
-    0% {
-        /* transform: translateY(100px); */
+    0% {        
         opacity: 0;
     }
 
-    100% {
-        /* transform: translateY(0); */
+    100% {        
         opacity: 1;
     }
 }
