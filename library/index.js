@@ -1,46 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("burger").addEventListener("click", function() {
-        document.querySelector(".main-header").classList.toggle("open")
-    })
-})
-
-/*  document.querySelector(".main-header").classList.remove("open")*/ 
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("nav-menu").addEventListener("click", function(e) {
-        e.isClick = true;   
-        console.log('клик внутри1');
-    })
-})
-
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("burger").addEventListener("click", function(e) {
-        e.isClick = true;   
-        console.log('клик внутри2');
-    })
-})
-const menuItems = document.querySelectorAll('.menu-element');
-
-menuItems.forEach(e => {
-    e.addEventListener("click", function() {
-        document.querySelector(".main-header").classList.toggle("open")
-        console.log("клик по ссылке")
-    })
-})
-
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    document.body.addEventListener("click", function(e) {
-        if (e.isClick == true) return;
-        document.querySelector(".main-header").classList.remove("open")
-        console.log('клик внe блока');
-    })
-})
-
-
-
 console.log(`
-
 Есть модальные окна! \n
 Регистрации нет! \n
 Бургер и другие кнопки до регистрации работают, кроме кнопок Buy \n
@@ -49,8 +7,6 @@ console.log(`
 
 С подсчетом баллов запуталась =(
 `)
-
-
 
 /* Бургер меню */
 const burger = document.getElementById("burger");
@@ -229,7 +185,7 @@ function Copy(containerid) {
 
 // document.addEventListener('click', closeModalBuyCard);
 
-// смена имени кнопки
+
 
 
 //слайдер
@@ -323,4 +279,3 @@ function changeSeasons(index) {
     favoritesCards[index].classList.add('active'); 
     activeSeasons = favoritesCards[index];
 };
-
