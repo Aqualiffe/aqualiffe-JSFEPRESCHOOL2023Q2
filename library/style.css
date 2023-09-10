@@ -8,7 +8,9 @@ body {
     background-color: #8E8E8E;
     padding: 0;
     margin: 0;
+
     box-sizing: border-box;
+
 }
 
 .body-wrapper {
@@ -140,7 +142,7 @@ h3 {
     width: 28px;
     height: 28px;
     margin: 31px 0px 31px 40px;
-    
+
 }
 
 .ico_profile {
@@ -160,8 +162,7 @@ h3 {
     outline: none;
     background-color: #0C0C0E;
     cursor: pointer;
-    
-}
+
 
 .header__burger-btn span {
     display: block;
@@ -170,7 +171,7 @@ h3 {
     height: 2px;
     background-color: #fff;
     left: 0px;
-    
+
     transition: background-color 0.3s, opacity .5s, transform .5s;
     will-change: transform;
 }
@@ -273,12 +274,14 @@ h3 {
 
 .gallery-imgs {
     display: flex;
+
     justify-content: start;
     gap: 25px;
     position: absolute;
     top: 0px;
     left: 0px;
     transition: transform 0.5s ease-in-out;;
+
 }
 
 
@@ -306,6 +309,7 @@ h3 {
 }
 
 .carret_left, .carret_right {
+
     position: absolute;
     display: none;
     width: 24px;
@@ -327,6 +331,7 @@ h3 {
     background-image: url(./assets/img/Carret_Right.svg);
     
 }
+
 
 
 .box {
@@ -358,9 +363,11 @@ h3 {
 }
 
 
+
 .box:nth-of-type(4), .box:nth-of-type(5) {
     display: none;
 }
+
 
 
 .seasons {
@@ -935,6 +942,7 @@ h3 {
 }
 
 .carret_left:hover, .carret_right:hover  {
+
     cursor: pointer;    
 }
 
@@ -967,11 +975,13 @@ h3 {
 
 
 @media (max-width: 1400px) {
+
     .favorites-conteiner {
         flex-direction: column;
         align-content: center;
         align-items: center;
     }
+
 
     .gallery-conteiner {
         max-width: 950px;
@@ -979,6 +989,7 @@ h3 {
 
     .box:nth-of-type(4) {
         display: flex;
+
     }
     
     .carousel-wrapper {
@@ -1024,6 +1035,7 @@ h3 {
 }
 
 @media (max-width: 1024px) {
+
 
     .box:nth-of-type(5) {
         display: flex;
@@ -1082,6 +1094,7 @@ h3 {
         gap: 100px;
     }
 
+
     .gallery-conteiner {
         max-width: 450px;
        
@@ -1092,6 +1105,7 @@ h3 {
 }
 
 @media (max-width: 750px) {
+
 
     .seasons {
         width: 100%;

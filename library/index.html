@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="style2.css">    
     <link href="./assets/img/favicon.ico" rel="Icon">
     <meta name="viewport" content="width=device-width">
-    <script src="./index.js" defer></script>
   </head>
   <body>
     <div class="body-wrapper">
@@ -20,11 +19,11 @@
                 <h1>Brooklyn Public Library</h1>           
                 <nav class="nav-menu" id="nav-menu">
                     <ul class="menu">
-                        <li class="menu-element"><a href="#About">About</a></li>
-                        <li class="menu-element"><a href="#Favorites">Favorites</a></li>
-                        <li class="menu-element"><a href="#CofeeShop">Coffee shop</a></li>
-                        <li class="menu-element"><a href="#Contacts">Contacts</a></li>
-                        <li class="menu-element"><a href="#LibraryCard">Library Card</a></li>
+                        <li class="menu-element"><a href="#About" id="link-menu-element">About</a></li>
+                        <li class="menu-element"><a href="#Favorites" id="link-menu-element">Favorites</a></li>
+                        <li class="menu-element"><a href="#CofeeShop" id="link-menu-element">Coffee shop</a></li>
+                        <li class="menu-element"><a href="#Contacts" id="link-menu-element">Contacts</a></li>
+                        <li class="menu-element"><a href="#LibraryCard" id="link-menu-element">Library Card</a></li>
                     </ul>
                 </nav>
                 <div class="user-account">
@@ -151,7 +150,6 @@
                 </div>
             </div>
         </div>
-
         <section class="Welcome"> 
             <div class="welcome-content">
                 <h2 class="welcom-text">
@@ -167,6 +165,7 @@
                     <div class="h2-line"></div>
                 </div>
                 <p class="text-about">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
+
                 <div class="gallery-conteiner">
                     <button class="carret_left" disabled="true"></button>
                     <div class="about-gallery">
@@ -179,6 +178,7 @@
                         </div>
                     </div>
                     <button class="carret_right"></button>
+
                 </div>
                 <div class="carousel-wrapper">
                     <div class="carousel_pagination">
@@ -191,10 +191,12 @@
                         <div class="box">
                             <button class="dot"></button>
                         </div>
+
                         <div class="box">
                             <button class="dot"></button>
                         </div>
                         <div class="box">
+
                             <button class="dot"></button>
                         </div>
                     </div>
@@ -623,6 +625,11 @@
             </div>
         </div>         
         </footer>
+
     </div>    
+
+    </div>
+    <script src="./index.js"></script>
+
   </body>
 </html>
