@@ -8,6 +8,9 @@ body {
     background-color: #8E8E8E;
     padding: 0;
     margin: 0;
+
+    box-sizing: border-box;
+
 }
 
 .body-wrapper {
@@ -139,7 +142,7 @@ h3 {
     width: 28px;
     height: 28px;
     margin: 31px 0px 31px 40px;
-    z-index: 3;
+
 }
 
 .ico_profile {
@@ -159,8 +162,7 @@ h3 {
     outline: none;
     background-color: #0C0C0E;
     cursor: pointer;
-    z-index: 3;
-}
+
 
 .header__burger-btn span {
     display: block;
@@ -169,7 +171,7 @@ h3 {
     height: 2px;
     background-color: #fff;
     left: 0px;
-    z-index: 3;
+
     transition: background-color 0.3s, opacity .5s, transform .5s;
     will-change: transform;
 }
@@ -254,14 +256,42 @@ h3 {
     word-wrap: break-word;
 }
 
-.about-gallery {
-    display: flex;
-    justify-content: space-between;
+.gallery-conteiner {
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: #fff;
 }
+
+
+.about-gallery {
+    max-width: 1400px;
+    height: 560px;
+    overflow: hidden;
+    position: relative;
+    margin: 0px auto 35px auto;
+}
+
+.gallery-imgs {
+    display: flex;
+
+    justify-content: start;
+    gap: 25px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition: transform 0.5s ease-in-out;;
+
+}
+
 
 .img_about-gallery {
     width: 450px; 
     height: 560px;
+    flex-shrink: 0;
+    object-fit: cover;
+    flex-shrink: 0;
+    max-width: 100%;
 }
 
 .carousel-wrapper {
@@ -279,17 +309,27 @@ h3 {
 }
 
 .carret_left, .carret_right {
+
+    position: absolute;
+    display: none;
     width: 24px;
     height: 24px;
-    display: none;
+    border: none;
+    background-color: #fff;    
 }
 
 .carret_left {
+    top: 50%;
+    left: -58px;
     background-image: url(./assets/img/Carret_Left.svg);
+    
 }
 
 .carret_right {
+    right: -58px;
+    top: 50%;
     background-image: url(./assets/img/Carret_Right.svg);
+    
 }
 
 
@@ -322,9 +362,13 @@ h3 {
     background-color: #BB945F;
 }
 
-.box.hide {
+
+
+.box:nth-of-type(4), .box:nth-of-type(5) {
     display: none;
 }
+
+
 
 .seasons {
     display: flex;
@@ -372,11 +416,22 @@ h3 {
     font-weight: 700;
 }
 
-.favorites-conteiner {
-    display: flex;
+.favorites-conteiner{
+    display: none;
     flex-wrap: wrap;
-    justify-content: space-between;    
+    justify-content: space-between;
+    visibility: hidden;
+    animation: fade-out 1s;
 }
+
+
+.favorites-conteiner.active {
+    opacity: 1;
+    visibility: visible;
+    animation: fade-in 2s;
+    display: flex;
+}
+
 
 .favorites-book {
     display: flex;
@@ -470,9 +525,9 @@ h3 {
     margin: 20px 0 15px 20px;
 }
 
-.spring-content, .summer-content, .autumn-content {
+/* .spring-content, .summer-content, .autumn-content {
     display: none;
-}
+} */
 
 .text-cofeeshop {
     width: 100%; 
@@ -674,7 +729,7 @@ h3 {
     background: #BB945F;
     align-items: left;
     padding: 20px 20px 0px 20px;
-    margin-bottom: 20px;
+    
 }
 
 .card-bg__name {
@@ -695,6 +750,7 @@ h3 {
     border: 1px solid #FFF;
     margin-bottom: 25px;
     flex-shrink: 0; 
+    outline: none;
 }
 
 .card-bg__input::placeholder {
@@ -724,6 +780,7 @@ h3 {
     letter-spacing: 1px;
     transition-duration: 0.3s;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 .card-bg__submit-button:hover {
@@ -767,7 +824,7 @@ h3 {
     gap: 20px;
 }
 
-.get-card-btm {
+.get-card-btn {
     width: 75px; 
     height: 30px;
     border-radius: 2px; 
@@ -782,7 +839,7 @@ h3 {
     cursor: pointer;
 }
 
-.get-card-btm:hover {
+.get-card-btn:hover {
     background-color: #BB945F;
     border: 0;
 }
@@ -885,36 +942,54 @@ h3 {
 }
 
 .carret_left:hover, .carret_right:hover  {
-    cursor: pointer;
+
+    cursor: pointer;    
+}
+
+.carret_left[disabled], .carret_right[disabled] {   
+    cursor: default;
+    opacity: 0.3;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        visibility: hidden;
+      }
+      to {
+        opacity: 1;
+        visibility: visible;
+      }
+}
+
+@keyframes fade-out {
+    from {
+      opacity: 1;
+      visibility: visible;
+    }
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
 }
 
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
+
     .favorites-conteiner {
         flex-direction: column;
         align-content: center;
         align-items: center;
     }
 
-    .about-gallery {
-        justify-content: center;
-        align-items: center;
-    }
 
-    .gallery-tablet {
-        display: none;
-    }
+    .gallery-conteiner {
+        max-width: 950px;
+      }
 
-    .img_about-gallery {
-        margin: 0 58px;
-    }
+    .box:nth-of-type(4) {
+        display: flex;
 
-    .carret_left, .carret_right {
-        display: inline-block;
-    }
-
-    .box.hide {
-        display: block;
     }
     
     .carousel-wrapper {
@@ -960,6 +1035,17 @@ h3 {
 }
 
 @media (max-width: 1024px) {
+
+
+    .box:nth-of-type(5) {
+        display: flex;
+    }
+
+
+
+    .carret_left, .carret_right {
+        display: block;
+    }
 
     .header__burger-btn {
         display: block;
@@ -1008,9 +1094,19 @@ h3 {
         gap: 100px;
     }
 
+
+    .gallery-conteiner {
+        max-width: 450px;
+       
+      }
+
+
+
 }
 
 @media (max-width: 750px) {
+
+
     .seasons {
         width: 100%;
         gap: 25px;
