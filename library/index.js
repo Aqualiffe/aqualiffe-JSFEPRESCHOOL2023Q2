@@ -163,48 +163,32 @@ function Copy(containerid) {
 
 // Покупка книг
 const btnsBook = document.querySelectorAll('.book_button');
+const modalBuyCard = document.querySelector('.modal-buy-a-card');
+const btnBuyClose = document.querySelector('.x-buy-a-card');
+const actBuyCard = document.querySelector('.modal_buy-a-card');
+
+
+const openModalBuyCard = function() {
+    modalBuyCard.classList.add("open");
+};
 
 btnsBook.forEach(e => {
     e.addEventListener('click', () => {
-        console.log(e);
-    }
-    )
+        openModalBuyCard();        
+    })    
 });
 
+const closeModalBuyCard = function(e) {
+    const clickBuyClose = e.composedPath().includes(btnBuyClose);
+    // const clickBuyCard = e.composedPath().includes(actBuyCard);    
+    // const clickBtnBooks = e.composedPath().includes(btnsBook);
+    if (clickBuyClose){      
+        modalBuyCard.classList.remove('open');
+    }
+    
+};
 
-// const modalBuyBook = () => { 
-//     modalControler({
-//         modalElem: '.modal-buy-a-card',
-//         btnOpen: 'clickBtnBook', // сменить кнопку
-//         btnClose: '.x-buy-a-card',
-//         activModal: '.modal_buy-a-card'
-//     });
-// };
-
-// const closeModal = function(e) {
-//     const clickModalLogIn=e.composedPath().includes(modalLogIn);
-//     const clickMenu=e.composedPath().includes(dropMenu);
-//     const clickLogo=e.composedPath().includes(logo);
-//     const clickButtonOpen=e.composedPath().includes(buttonLogIn);      
-//     const clickButtonClose=e.composedPath().includes(buttonModalClose);
-//     if (clickButtonOpen) {
-//         modal.classList.add("open");
-//     } else if (!clickModalLogIn & !clickLogo & !clickMenu || clickButtonClose) {
-//         modal.classList.remove('open');
-//     } 
-// };
-
-// const openModal = function() {
-//     modal.classList.add("open");
-// };
-
-// document.addEventListener('click', closeModal);
-
-// buttonLogIn.addEventListener('click', function(){
-//     openModal();
-//     removeDropMenuOpen();
-// });
-
+document.addEventListener('click', closeModalBuyCard);
 
 // смена имени кнопки
 
