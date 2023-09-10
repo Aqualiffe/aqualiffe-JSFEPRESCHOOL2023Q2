@@ -7,7 +7,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded&family=Inter:wght@400;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded&family=Forum&family=Inter:wght@400;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">    
     <link href="./assets/img/favicon.ico" rel="Icon">
     <meta name="viewport" content="width=device-width">
   </head>
@@ -28,20 +29,135 @@
                 <div class="user-account">
                     <a href="#" class="logo"><span class="ico_profile"></span></a>
                 </div>
+                <div class="dropMenu">
+                    <h5 class="profile">Profile</h5>
+                    <div class="auth with">
+                        <button class="btn_profile btn_menu_log-in">Log In</button>
+                        <button class="btn_profile btn_menu_register">Register</button>
+                    </div>
+                    <div class="auth no close">
+                        <button class="btn_profile btn_menu_my-profile">My profile</button>
+                        <button class="btn_profile btn_menu_log-out">Log Out</button>
+                    </div>
+                </div>
                 <button class="header__burger-btn" id="burger">
                     <span></span><span></span><span></span>
                 </button> 
             </div>
         </header>
-        <section class="Welcome"> 
-            <div class="welcome-content">
-                <div class="welcom-text">
-                    Welcome&nbsp;<br/>to the Brooklyn Library
+        <div class="modal modalIn">
+            <div class="modal_logIn">
+                <h5 class="modal-title">Login</h5>
+                <div class="modal-box">        
+                    <p class="modal-text">E-mail or readers card</p>
+                    <input type="email" name="email-logIn" id="email" class="modal-input">    
+                    <p class="modal-text">Password</p>
+                    <input type="password" name="password-logIn" id="password" class="modal-input">
+                    <button class="btn_logIn">Log In</button>
+                    <p class="modal-text_info">Don’t have an account? <a href="" class="modal-link">Register</a></p>
+                </div>
+                <button class="modal__x x-log"></button>
+            </div>
+        </div>
+        <div class="modal modalReg">
+            <div class="modal_Register">
+                <h5 class="modal-title">Register</h5>
+                <div class="modal-box">        
+                    <p class="modal-text">First name</p>
+                    <input type="text" class="modal-input">
+                    <p class="modal-text">Last name</p>
+                    <input type="text" class="modal-input">
+                    <p class="modal-text">E-mail or readers card</p>
+                    <input type="email" name="email-Reg" id="email-Reg" class="modal-input">    
+                    <p class="modal-text">Password</p>
+                    <input type="password" name="password-Reg" id="password-Reg" class="modal-input">
+                    <button class="btn_signUp">Sign Up</button>
+                    <p class="modal-text_info">Already have an account? <a href="" class="modal-link">Login</a></p>
+                </div>
+                <button class="modal__x x-reg"></button>
+            </div>
+        </div>
+        <div class="modal modalProfile">
+            <div class="modal_profile">
+                <div class="name-box">
+                <div class="img-name">
+                    <p class="img_user-name">JD</p>
+                </div> 
+                <div class="text-name">
+                    <p class="user-name">John Doe</p>
+                </div>
+                </div>
+                <div class="my-profile-box">
+                    <h5 class="my-profile-name">My profile</h5>
+                    <div class="profile-box">
+                        <div class="card-profile">
+                            <div class="profile-info">
+                                <p class="visits">Visits</p>
+                                <img src="./assets/img/Union.svg" alt="Visits" class="info-img">
+                                <p class="items-visits qty">23</p>
+                            </div> 
+                            <div class="profile-info">
+                                <p class="bonuses">Bonuses</p>
+                                <img src="./assets/img/Star1.svg" alt="Bonuses" class="info-img">
+                                <p class="items-bonuses qty">1240</p>
+                            </div> 
+                            <div class="profile-info">
+                                <p class="books">Books</p>
+                                <img src="./assets/img/book.svg" alt="Books" class="info-img">
+                                <p class="items-books qty">2</p>
+                            </div> 
+                        </div>
+                        <div class="rented_book">
+                            <h6 class="rented-books-name">Rented books</h6>
+                            <ul class="rented_book_list">
+                                <li class="rented_book_item">The Last Queen, Clive Irving</li>
+                                <li class="rented_book_item">Dominicana, Angie Cruz</li>
+                            </ul>
+                        </div>
+                        <div class="profile_card-numbers">
+                            <span class="text_card-number">Card number</span><span class="profile_CN" id="profile_CN">F00234030</span><button onclick="Copy('profile_CN')" id="btn-copy"><span class="icon-copy" title="Copy to clipboard"></span></button>
+                        </div>
+                    </div>
+                </div>
+                <button class="modal__x x-profile"></button>
+            </div>
+        </div>
+        <div class="modal modal-buy-a-card">
+            <div class="modal_buy-a-card">
+                <div class="top-buy-a-card">
+                    <p class="title-buy-a-card">Buy a library card</p>
+                    <button class="modal__x x-buy-a-card"></button>
+                </div>
+                <div class="buy-a-card_info">
+                    <div class="buy-a-card_form">
+                        <p class="modal-text Bank-card">Bank card number</p>
+                        <input type="text" class="modal-input">
+                        <p class="modal-text">Expiration</p>
+                        <p><input type="text" class="modal-input ex-code1"><input type="text" class="modal-input ex-code2"></p>
+                        <p class="modal-text">CVC</p>
+                        <input type="text" class="modal-input cvc">
+                        <p class="modal-text">Cardholder name</p>
+                        <input type="text" class="modal-input">
+                        <p class="modal-text">Postal code</p>
+                        <input type="text" class="modal-input">
+                        <p class="modal-text">City / Town</p>
+                        <input type="text" class="modal-input city">
+                        <p"><button class="book_button btn_card">Buy</button><span class="price">$ 25.00</span></p>
+                    </div>
+                    <div class="buy-a-card_text">
+                        <p>If you are live, work, attend school, or pay property taxes in New York State, you can get a $25 digital library card right now using this online form. Visitors to New York State can also use this form to apply for a temporary card.</p>
+                    </div>
                 </div>
             </div>
+        </div>
+        <section class="Welcome"> 
+            <div class="welcome-content">
+                <h2 class="welcom-text">
+                    Welcome&nbsp;<br/>to the Brooklyn Library
+                </h2>
+            </div>
         </section>
-    
-        
+
         <main class="main">
             <section class="About">
                 <div class="section-title">
@@ -49,12 +165,20 @@
                     <div class="h2-line"></div>
                 </div>
                 <p class="text-about">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
-                <div class="about-gallery">
-                    <span class="carret_left"></span>
-                    <img  src="./assets/img/photo1-about.jpg" alt="Photo The Brooklyn Library" class="img_about-gallery">
-                    <img  src="./assets/img/photo2-about.jpg" alt="Photo The Brooklyn Library" class="img_about-gallery gallery-tablet">
-                    <img  src="./assets/img/photo3-about.jpg" alt="Photo The Brooklyn Library" class="img_about-gallery gallery-tablet">
-                    <span class="carret_right"></span>
+
+                <div class="gallery-conteiner">
+                    <button class="carret_left" disabled="true"></button>
+                    <div class="about-gallery">
+                        <div class="gallery-imgs">
+                            <img  src="./assets/img/photo1-about.jpg" alt="Photo The Brooklyn Library" class="img_about-gallery activ">
+                            <img  src="./assets/img/photo2-about.jpg" alt="Photo The Brooklyn Library" class="img_about-gallery">
+                            <img  src="./assets/img/photo3-about.jpg" alt="Photo The Brooklyn Library" class="img_about-gallery">
+                            <img  src="./assets/img/photo4-about.jpg" alt="Photo The Brooklyn Library" class="img_about-gallery">
+                            <img  src="./assets/img/photo5-about.jpg" alt="Photo The Brooklyn Library" class="img_about-gallery">
+                        </div>
+                    </div>
+                    <button class="carret_right"></button>
+
                 </div>
                 <div class="carousel-wrapper">
                     <div class="carousel_pagination">
@@ -67,10 +191,12 @@
                         <div class="box">
                             <button class="dot"></button>
                         </div>
-                        <div class="box hide">
+
+                        <div class="box">
                             <button class="dot"></button>
                         </div>
-                        <div class="box hide">
+                        <div class="box">
+
                             <button class="dot"></button>
                         </div>
                     </div>
@@ -84,7 +210,7 @@
                 
                 <h3>Pick favorites of season</h3>
                 <div class="seasons">
-                    <div class="group-seasons">
+                    <div class="group-seasons favorites">
                         <label for="radio-winter" class="filter-seasons">
                             <input type="radio" id="radio-winter" class="radio-button" name="content-seasons" checked="checked">
                             <span class="radio"></span>                 
@@ -115,7 +241,7 @@
                 </div>
                 <article class="favorites-conteiner winter-content">
                     <div class="favorites-book">
-                        <p class="staff-picks">Staff Picks</p>
+                        <h6 class="staff-picks">Staff Picks</h6>
                         <div class="staff-picks-line"></div>
                         <p class="book-name">The Book Eaters</p>
                         <p class="book-author">By Sunyi Dean</p>
@@ -126,7 +252,7 @@
                         <img src="./assets/img/books/bookThe_Book_Eaters.jpg" alt="The Book Eaters By Sunyi Dean" class="book-img">                        
                     </div>
                     <div class="favorites-book">
-                        <p class="staff-picks">Staff Picks</p>
+                        <h6 class="staff-picks">Staff Picks</h6>
                         <div class="staff-picks-line"></div>
                         <p class="book-name">Cackle</p>
                         <p class="book-author">By Rachel Harrison</p>
@@ -137,7 +263,7 @@
                         <img src="./assets/img/books/bookCackle.jpg" alt="Cackle By Rachel Harrison" class="book-img">                        
                     </div>
                     <div class="favorites-book">
-                        <p class="staff-picks">Staff Picks</p>
+                        <h6 class="staff-picks">Staff Picks</h6>
                         <div class="staff-picks-line"></div>
                         <p class="book-name">Dante: Poet of the Secular World</p>
                         <p class="book-author">By Erich Auerbach</p>
@@ -148,20 +274,20 @@
                         <img src="./assets/img/books/bookDante.jpg" alt="Dante: Poet of the Secular World By Erich Auerbach" class="book-img">                        
                     </div>
                     <div class="favorites-book">
-                        <p class="staff-picks">Staff Picks</p>
+                        <h6 class="staff-picks">Staff Picks</h6>
                         <div class="staff-picks-line"></div>
                         <p class="book-name">The Last Queen</p>
                         <p class="book-author">By Clive Irving</p>
                         <p class="book-description">
                             A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.
                         </p>
-                        <button class="book_button" disabled>Own</button>                        
+                        <button class="book_button">Buy</button>                        
                         <img src="./assets/img/books/bookThe_Last_Queen.jpg" alt="The Last Queen By Clive Irving" class="book-img">                        
                     </div>
                 </article>
                 <article class="favorites-conteiner spring-content">
                     <div class="favorites-book">
-                        <p class="staff-picks">Staff Picks</p>
+                        <h6 class="staff-picks">Staff Picks</h6>
                         <div class="staff-picks-line"></div>
                         <p class="book-name">The Body</p>
                         <p class="book-author">By Stephen King</p>
@@ -172,7 +298,7 @@
                         <img src="./assets/img/books/bookThe_Body.jpg" alt="The Body By Stephen King" class="book-img">                        
                     </div>
                     <div class="favorites-book">
-                        <p class="staff-picks">Staff Picks</p>
+                        <h6 class="staff-picks">Staff Picks</h6>
                         <div class="staff-picks-line"></div>
                         <p class="book-name">Carry: A Memoir of Survival on Stolen Land</p>
                         <p class="book-author">By Toni Jenson</p>
@@ -183,7 +309,7 @@
                         <img src="./assets/img/books/bookCarry.jpg" alt="Carry: A Memoir of Survival on Stolen Land By Toni Jenson" class="book-img">                        
                     </div>
                     <div class="favorites-book">
-                        <p class="staff-picks">Staff Picks</p>
+                        <h6 class="staff-picks">Staff Picks</h6>
                         <div class="staff-picks-line"></div>
                         <p class="book-name">Days of Distraction</p>
                         <p class="book-author">By Alexandra Chang</p>
@@ -194,20 +320,20 @@
                         <img src="./assets/img/books/bookDays_of_Distraction.jpg" alt="Days of Distraction By Alexandra Chang" class="book-img">                        
                     </div>
                     <div class="favorites-book">
-                        <p class="staff-picks">Staff Picks</p>
+                        <h6 class="staff-picks">Staff Picks</h6>
                         <div class="staff-picks-line"></div>
                         <p class="book-name">Dominicana</p>
                         <p class="book-author">By Angie Cruz</p>
                         <p class="book-description">
                             A fascinating story of a teenage girl who marries a man twice her age with the promise to bring her to America. Her marriage is an opportunity for her family to eventually immigrate. For fans of Isabel Allende and Julia Alvarez.
                         </p>
-                        <button class="book_button" disabled>Own</button>                         
+                        <button class="book_button">Buy</button>                         
                         <img src="./assets/img/books/bookDominicana.jpg" alt="Dominicana By Angie Cruz" class="book-img">                        
                     </div>
                 </article>
                 <article class="favorites-conteiner summer-content">
                     <div class="favorites-book">
-                        <p class="staff-picks">Staff Picks</p>
+                        <h6 class="staff-picks">Staff Picks</h6>
                         <div class="staff-picks-line"></div>
                         <p class="book-name">Crude: A Memoir</p>
                         <p class="book-author">By Pablo Fajardo & ​​Sophie Tardy-Joubert</p>
@@ -218,7 +344,7 @@
                         <img src="./assets/img/books/bookCrude.jpg" alt="Crude: A Memoir By Pablo Fajardo & ​​Sophie Tardy-Joubert" class="book-img">                        
                     </div>
                     <div class="favorites-book">
-                        <p class="staff-picks">Staff Picks</p>
+                        <h6 class="staff-picks">Staff Picks</h6>
                         <div class="staff-picks-line"></div>
                         <p class="book-name">Let My People Go Surfing</p>
                         <p class="book-author">By Yvon Chouinard</p>
@@ -229,7 +355,7 @@
                         <img src="./assets/img/books/bookLet_My_People.jpg" alt="Let My People Go Surfing By Yvon Chouinard" class="book-img">                        
                     </div>
                     <div class="favorites-book">
-                        <p class="staff-picks">Staff Picks</p>
+                        <h6 class="staff-picks">Staff Picks</h6>
                         <div class="staff-picks-line"></div>
                         <p class="book-name">The Octopus Museum: Poems</p>
                         <p class="book-author">By Brenda Shaughnessy</p>
@@ -240,7 +366,7 @@
                         <img src="./assets/img/books/bookThe_Octopus_Museum.jpg" alt="The Octopus Museum: Poems By Brenda Shaughnessy" class="book-img">                        
                     </div>
                     <div class="favorites-book">
-                        <p class="staff-picks">Staff Picks</p>
+                        <h6 class="staff-picks">Staff Picks</h6>
                         <div class="staff-picks-line"></div>
                         <p class="book-name">Shark Dialogues: A Novel</p>
                         <p class="book-author">By Kiana Davenport</p>
@@ -253,7 +379,7 @@
                 </article>
                 <article class="favorites-conteiner autumn-content">
                     <div class="favorites-book">
-                        <p class="staff-picks">Staff Picks</p>
+                        <h6 class="staff-picks">Staff Picks</h6>
                         <div class="staff-picks-line"></div>
                         <p class="book-name">Casual Conversation</p>
                         <p class="book-author">By Renia White</p>
@@ -264,7 +390,7 @@
                         <img src="./assets/img/books/bookCasual_Conversation.jpg" alt="Casual Conversation By Renia White" class="book-img">                        
                     </div>
                     <div class="favorites-book">
-                        <p class="staff-picks">Staff Picks</p>
+                        <h6 class="staff-picks">Staff Picks</h6>
                         <div class="staff-picks-line"></div>
                         <p class="book-name">The Great Fire</p>
                         <p class="book-author">By Lou Ureneck</p>
@@ -275,7 +401,7 @@
                         <img src="./assets/img/books/bookThe_Great_Fire.jpg" alt="The Great Fire By Lou Ureneck" class="book-img">                        
                     </div>
                     <div class="favorites-book">
-                        <p class="staff-picks">Staff Picks</p>
+                        <h6 class="staff-picks">Staff Picks</h6>
                         <div class="staff-picks-line"></div>
                         <p class="book-name">Rickey: The Life and Legend</p>
                         <p class="book-author">By Howard Bryant</p>
@@ -286,7 +412,7 @@
                         <img src="./assets/img/books/bookRickey.jpg" alt="Rickey: The Life and Legend By Howard Bryant" class="book-img">                        
                     </div>
                     <div class="favorites-book">
-                        <p class="staff-picks">Staff Picks</p>
+                        <h6 class="staff-picks">Staff Picks</h6>
                         <div class="staff-picks-line"></div>
                         <p class="book-name">Slug: And Other Stories</p>
                         <p class="book-author">By Megan Milks</p>
@@ -406,7 +532,7 @@
                             <input class="card-bg__input" type="text" placeholder="Reader's name">
                             <input class="card-bg__input" type="number" placeholder="Card number">
                             </div>
-                            <button class="card-bg__submit-button" type="submit" value="Check the card">Check the card</button>
+                            <button class="card-bg__submit-button" type="submit" value="Check the card" disabled>Check the card</button>
                         </form>
                     </div>
                     <div class="get-card">
@@ -415,12 +541,56 @@
                             <p class="get-card__text">You will be able to see a reader card after logging into account or you can register a new account</p>
                         </div>
                         <div class="get-card__button">
-                            <button class="get-card-btm">Sign Up</button>
-                            <button class="get-card-btm">Log in</button>
+                            <button class="get-card-btn btn_card_register">Sign Up</button>
+                            <button class="get-card-btn btn_card_log-in">Log in</button>                           
                         </div>
                     </div>
                 </div>
-            </section>       
+            </section>
+            <div class="LibraryCard_login close">
+                <div class="section-title">
+                    <h2 id="LibraryCard">Digital Library Cards</h2>
+                    <div class="h2-line"></div>
+                </div>
+                <div class="card-info">
+                    <div class="find-card">
+                        <p class="find-card__name">Your Library card</p>
+                        <form action="#" class="card-form">
+                            <div class="card-bg">
+                            <p class="card-bg__name">Brooklyn Public Library</p>
+                            <input class="card-bg__input" type="text" placeholder="Reader's name">
+                            <input class="card-bg__input" type="number" placeholder="Card number">
+                            </div>
+                            <div class="card-profile card-profile_logIn">
+                                <div class="profile-info profile-info-card">
+                                    <p class="visits">Visits</p>
+                                    <img src="./assets/img/Union.svg" alt="Visits" class="info-img">
+                                    <p class="items-visits qty">23</p>
+                                </div> 
+                                <div class="profile-info profile-info-card">
+                                    <p class="bonuses">Bonuses</p>
+                                    <img src="./assets/img/Star1.svg" alt="Bonuses" class="info-img">
+                                    <p class="items-bonuses qty">1240</p>
+                                </div> 
+                                <div class="profile-info profile-info-card">
+                                    <p class="books">Books</p>
+                                    <img src="./assets/img/book.svg" alt="Books" class="info-img">
+                                    <p class="items-books qty">2</p>
+                                </div> 
+                            </div>
+                        </form>
+                    </div>
+                    <div class="get-card">
+                        <div class="get-card__info">
+                            <p class="get-card__name">Visit your profile</p>                      
+                            <p class="get-card__text">With a digital library card you get free access to the Library’s wide array of digital resources including e-books, databases, educational resources, and more.</p>
+                        </div>
+                        <div class="get-card__button">                
+                            <button class="get-card-btm">Profile</button>
+                        </div>
+                    </div>
+                </div>
+            </div>   
         </main>
         
         <footer class="main-footer">
@@ -455,7 +625,11 @@
             </div>
         </div>         
         </footer>
+
+    </div>    
+
     </div>
     <script src="./index.js"></script>
+
   </body>
 </html>
