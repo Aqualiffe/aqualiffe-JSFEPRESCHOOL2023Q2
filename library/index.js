@@ -164,7 +164,12 @@ function Copy(containerid) {
 // Покупка книг
 const btnsBook = document.querySelectorAll('.book_button');
 
-
+btnsBook.forEach(e => {
+    e.addEventListener('click', () => {
+        console.log(e);
+    }
+    )
+});
 
 
 // const modalBuyBook = () => { 
