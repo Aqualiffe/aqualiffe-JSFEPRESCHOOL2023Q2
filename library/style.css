@@ -162,7 +162,7 @@ h3 {
     outline: none;
     background-color: #0C0C0E;
     cursor: pointer;
-
+}
 
 .header__burger-btn span {
     display: block;
@@ -1099,8 +1099,6 @@ h3 {
         max-width: 450px;
        
       }
-
-
 
 }
 
