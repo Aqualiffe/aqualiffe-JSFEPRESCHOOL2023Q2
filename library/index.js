@@ -158,10 +158,48 @@ function Copy(containerid) {
     selector.select();
     document.execCommand('copy');
     document.body.removeChild(textarea);
-}
+};
 
 
 // Покупка книг
+const btnsBook = document.querySelectorAll('.book_button');
+
+
+
+
+// const modalBuyBook = () => { 
+//     modalControler({
+//         modalElem: '.modal-buy-a-card',
+//         btnOpen: 'clickBtnBook', // сменить кнопку
+//         btnClose: '.x-buy-a-card',
+//         activModal: '.modal_buy-a-card'
+//     });
+// };
+
+// const closeModal = function(e) {
+//     const clickModalLogIn=e.composedPath().includes(modalLogIn);
+//     const clickMenu=e.composedPath().includes(dropMenu);
+//     const clickLogo=e.composedPath().includes(logo);
+//     const clickButtonOpen=e.composedPath().includes(buttonLogIn);      
+//     const clickButtonClose=e.composedPath().includes(buttonModalClose);
+//     if (clickButtonOpen) {
+//         modal.classList.add("open");
+//     } else if (!clickModalLogIn & !clickLogo & !clickMenu || clickButtonClose) {
+//         modal.classList.remove('open');
+//     } 
+// };
+
+// const openModal = function() {
+//     modal.classList.add("open");
+// };
+
+// document.addEventListener('click', closeModal);
+
+// buttonLogIn.addEventListener('click', function(){
+//     openModal();
+//     removeDropMenuOpen();
+// });
+
 
 // смена имени кнопки
 
@@ -210,7 +248,7 @@ dots.forEach((item, indexDot)=> {
     })
 })
 
-btnLeft.addEventListener('click', () => {    
+btnLeft.addEventListener('click', () => { 
     slideIndex = (slideIndex - 1 + slideCount) % slideCount;
     slide();   
 });
@@ -220,4 +258,40 @@ btnRight.addEventListener('click', () => {
     slide();    
 });
 
+window.addEventListener('resize', () => {
+    activeDot(0);
+    slider.style.transform = 'translateX(0px)';
 
+});
+
+
+// Change seasons
+
+const radioButtons = Array.from(document.querySelectorAll('.group-seasons'));
+const radioInputs = Array.from(document.querySelectorAll('.radio-button'));
+const favoritesCards = Array.from(document.querySelectorAll('.favorites-conteiner'));
+let activeBtn = radioButtons[0];
+let activeSeasons = favoritesCards[0];
+
+activeSeasons.classList.add('active');
+
+radioButtons.forEach(elem => {
+    elem.addEventListener('click', btnClick)
+});
+
+function btnClick(e) {
+    const btn = e.target.closest('.group-seasons');
+    changeBtn(btn);
+};
+
+function changeBtn(btn) {
+    activeBtn = btn;
+    const indexBtn = radioButtons.indexOf(btn);
+    changeSeasons(indexBtn);
+};
+
+function changeSeasons(index) {
+    activeSeasons.classList.remove('active');
+    favoritesCards[index].classList.add('active'); 
+    activeSeasons = favoritesCards[index];
+};
