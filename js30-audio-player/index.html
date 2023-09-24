@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio player</title>
+    <link rel="shortcut icon" href="./assets/svg/play.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <img src="./assets/img/lemonade.png" alt="" class="bg">
+    <main>
+        <div class="player">
+                <h1 class="music-name">Don't Hurt Yourself</h1>
+                <p class="title">Beyonce</p>
+                <audio src="./assets/audio/beyonce.mp3" class="music"></audio>
+                <img src="./assets/img/lemonade.png" alt="" class="music-img">
+                <div class="controls">
+                    <button type="submit" class="prev_btn"><img class="btn-img" src="./assets/svg/prev-btn.svg" alt="" ></button>
+                    <button type="submit" class="btn"><img class="play-btn" src="./assets/svg/play-btn.svg" alt=""></button>
+                    <button type="submit" class="next_btn"><img class="btn-img" src="./assets/svg/next-btn.svg" alt=""></button>
+                </div>
+                <div class="bar">
+                    <input type="range" value="0" class="time-bar">
+                    <span class="current-time">00:00</span>
+                    <span class="song-duration">00:00</span>
+                </div>     
+        </div>
+    </main>
+    <footer>
+        <p>© 2023</p>
+        <a href="https://rs.school/js-stage0/" target="_blank" class="footer-TRSS"><img src="./assets/svg/rs_school_js.svg" width="121" alt="The Rolling Scopes School"></a>
+        <a href="https://github.com/Aqualiffe" target="_blank" class="git-name"><img src="./assets/svg/github-logo.png" width="30" alt="github.com/Aqualiffe">Aqualiffe</a>
+    </footer>
+    <script src="./index.js"></script> 
+</body>
+</html>
