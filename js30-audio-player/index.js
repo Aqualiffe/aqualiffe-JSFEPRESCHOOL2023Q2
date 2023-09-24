@@ -76,3 +76,21 @@ document.querySelector('.prev_btn').addEventListener('click', () => {
     changeAudio(songs[audioIndex]);
     play();    
 })
+
+function musicBar(){
+    const duration = audio.duration;
+    const currentTime = audio.currentTime;
+    let width = currentTime/duration * 100;
+    progressBar.style.width = `${width}%`
+};
+
+audio.addEventListener("timeupdate", musicBar);
+
+function changeTime(elem){
+    const width = this.clientWidth;
+    const clickX = elem.offsetX;
+    const duration = audio.duration;
+    audio.currentTime = clickX/width * duration;
+}
+
+progressContainer.addEventListener("click", changeTime);
