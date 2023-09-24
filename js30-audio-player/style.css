@@ -35,7 +35,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;    
-    background-color: #645f5f;
+    background-color: #b8b0b0;
     width: 400px;
     height: 600px;    
 }
@@ -43,14 +43,14 @@ main {
 .btn-img, .play-btn {
     width: 50px;
     height: 50px;
-    background-color: #645f5f;
+    background-color: #b8b0b0;
 }
 button {
     border: none;
-    background-color: #645f5f;
+    background-color: #b8b0b0;
 }
 
-button:hover {
+button:hover, .bar:hover {
     cursor: pointer;    
 }
 
@@ -58,10 +58,21 @@ button:hover {
     background-color: #A39BAC;
 }
 
+.title {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 0; 
+}
+
 .music-name {
     font-size: 18px;
     font-weight: 600;
     padding: 10px 0;
+}
+
+.music-img {
+    width: 350px;
+
 }
 
 footer {
@@ -76,3 +87,19 @@ footer img {
     vertical-align: middle;
     padding-right: 5px;
 }
+
+.bar {
+    position: relative;
+    width: 280px;
+    height: 5px;
+    justify-self: center;
+    border: 3px solid #595757;
+    margin-top: 10px;    
+}
+
+.time {
+    position: absolute;
+    border: 3px solid #000;
+    height: 100%;
+}
+
