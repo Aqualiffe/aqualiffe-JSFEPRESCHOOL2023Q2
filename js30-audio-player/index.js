@@ -3,34 +3,12 @@ let audio = document.querySelector(".music"),
     audioName = document.querySelector(".music-name"),
     audioImg = document.querySelector(".music-img"),
     audioTitle = document.querySelector(".title"),
-    progressBar = document.querySelector(".time"),
-    progressContainer = document.querySelector(".bar"),
+    progressBar = document.querySelector(".time"),    
     timeBar = document.querySelector('.time-bar'),
     timeCurrent = document.querySelector('.current-time'),
     songDuration = document.querySelector('.song-duration');
 
 let isPlay = false;
-
-function play() {
-    btnImg.src = "./assets/svg/pause-btn.svg";
-    isPlay = true;
-    audio.play();
-}
-
-function pause() {
-    btnImg.src ="./assets/svg/play-btn.svg";
-    isPlay = false;
-    audio.pause();
-}
-
-document.querySelector('.btn').addEventListener('click', () => {    
-    if(!isPlay) {
-        play();
-    } else {
-        pause();
-    }
-})
-
 let audioIndex = 0;
 
 const songs = [
@@ -53,6 +31,26 @@ const songs = [
         singer: "Babymetal"
     }  
 ];
+
+function play() {
+    btnImg.src = "./assets/svg/pause-btn.svg";
+    isPlay = true;
+    audio.play();
+}
+
+function pause() {
+    btnImg.src ="./assets/svg/play-btn.svg";
+    isPlay = false;
+    audio.pause();
+}
+
+document.querySelector('.btn').addEventListener('click', () => {    
+    if(!isPlay) {
+        play();
+    } else {
+        pause();
+    }
+})
 
 function changeAudio(song) {
     audioName.innerHTML = songs[audioIndex].name;
@@ -80,19 +78,17 @@ document.querySelector('.prev_btn').addEventListener('click', () => {
     play();    
 })
 
-
 function formatTime(time) {
     let min = Math.floor(time/60);
-    if(min<10){
+    if(min < 10){
         min=`0${min}`;
     }
     let sec = Math.floor(time%60);
-    if(sec<10){
+    if(sec < 10){
         sec=`0${sec}`;
     }
     return `${min}:${sec}`;
 }
-
 
 function musicBar(){
     const duration = audio.duration;
@@ -107,7 +103,5 @@ audio.addEventListener("timeupdate", musicBar);
 function changeTime(){
     audio.currentTime = timeBar.value;    
 }
-
-
 
 timeBar.addEventListener('click', changeTime)
