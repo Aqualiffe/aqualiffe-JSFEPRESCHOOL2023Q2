@@ -6,7 +6,8 @@ let audio = document.querySelector(".music"),
     progressBar = document.querySelector(".time"),    
     timeBar = document.querySelector('.time-bar'),
     timeCurrent = document.querySelector('.current-time'),
-    songDuration = document.querySelector('.song-duration');
+    songDuration = document.querySelector('.song-duration'),
+    audioBg = document.querySelector('.bg');
 
 let isPlay = false;
 let audioIndex = 0;
@@ -58,6 +59,7 @@ function changeAudio(song) {
     audioImg.src = songs[audioIndex].img;
     audioTitle.innerHTML = songs[audioIndex].singer;
     timeBar.value = 0;
+    audioBg.src = songs[audioIndex].img;
 }
 
 document.querySelector('.next_btn').addEventListener('click', () => {
