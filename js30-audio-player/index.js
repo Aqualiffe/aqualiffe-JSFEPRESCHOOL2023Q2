@@ -4,19 +4,21 @@ let audio = document.querySelector(".music"),
     audioImg = document.querySelector(".music-img"),
     audioTitle = document.querySelector(".title"),
     progressBar = document.querySelector(".time"),
-    progressContainer = document.querySelector(".bar");
-
+    progressContainer = document.querySelector(".bar"),
+    timeBar = document.querySelector('.time-bar'),
+    timeCurrent = document.querySelector('.current-time'),
+    songDuration = document.querySelector('.song-duration');
 
 let isPlay = false;
 
 function play() {
-    btnImg.src = "./assets/svg/pause.png";
+    btnImg.src = "./assets/svg/pause-btn.svg";
     isPlay = true;
     audio.play();
 }
 
 function pause() {
-    btnImg.src ="./assets/svg/play.png";
+    btnImg.src ="./assets/svg/play-btn.svg";
     isPlay = false;
     audio.pause();
 }
@@ -57,6 +59,7 @@ function changeAudio(song) {
     audio.src = songs[audioIndex].path;
     audioImg.src = songs[audioIndex].img;
     audioTitle.innerHTML = songs[audioIndex].singer;
+    timeBar.value = 0;
 }
 
 document.querySelector('.next_btn').addEventListener('click', () => {
@@ -77,20 +80,34 @@ document.querySelector('.prev_btn').addEventListener('click', () => {
     play();    
 })
 
+
+function formatTime(time) {
+    let min = Math.floor(time/60);
+    if(min<10){
+        min=`0${min}`;
+    }
+    let sec = Math.floor(time%60);
+    if(sec<10){
+        sec=`0${sec}`;
+    }
+    return `${min}:${sec}`;
+}
+
+
 function musicBar(){
     const duration = audio.duration;
-    const currentTime = audio.currentTime;
-    let width = currentTime/duration * 100;
-    progressBar.style.width = `${width}%`
+    const currTime = audio.currentTime;    
+    timeBar.value = currTime;    
+    songDuration.innerHTML = formatTime(duration);
+    timeCurrent.innerHTML = formatTime(currTime);
 };
 
 audio.addEventListener("timeupdate", musicBar);
 
-function changeTime(elem){
-    const width = this.clientWidth;
-    const clickX = elem.offsetX;
-    const duration = audio.duration;
-    audio.currentTime = clickX/width * duration;
+function changeTime(){
+    audio.currentTime = timeBar.value;    
 }
 
-progressContainer.addEventListener("click", changeTime);
+
+
+timeBar.addEventListener('click', changeTime)

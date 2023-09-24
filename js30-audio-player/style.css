@@ -16,6 +16,11 @@
 
 body {
     background-color: #f5f5f5;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 a {
@@ -34,53 +39,73 @@ main {
 .player {
     display: flex;
     justify-content: center;
-    align-items: center;    
-    background-color: #b8b0b0;
+    align-items: center;  
+    flex-direction: column;  
     width: 400px;
-    height: 600px;    
+    height: 600px;
+    border-radius: 20px;
+    background: rgba(54, 50, 50, 0.25);
+    box-shadow: 0 40px 100px rgba(50, 47, 47, 0.7);
+    padding: 20px;
+    overflow: hidden;
+    gap: 10px; 
+}
+
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 .btn-img, .play-btn {
     width: 50px;
-    height: 50px;
-    background-color: #b8b0b0;
+    height: 50px;    
+    
 }
+
 button {
     border: none;
-    background-color: #b8b0b0;
+    background: rgba(54, 50, 50, 0); 
+}
+.bar:hover {
+   cursor: pointer; 
 }
 
-button:hover, .bar:hover {
-    cursor: pointer;    
+button:hover {
+    cursor: pointer;
+    filter: invert(68%) sepia(10%) saturate(357%) hue-rotate(226deg) brightness(92%) contrast(86%);
+     
 }
 
-.btn-img:hover, .play-btn:hover {
-    background-color: #A39BAC;
-}
 
-.title {
-    font-size: 20px;
-    font-weight: 600;
-    padding: 10px 0; 
+
+.title, .music-name {
+    text-align: center;
+    text-transform: capitalize;
 }
 
 .music-name {
-    font-size: 18px;
-    font-weight: 600;
-    padding: 10px 0;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 800;
 }
+.title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
 
 .music-img {
     width: 350px;
-
+    border-radius: 50%;
+    margin: 10px;
 }
 
 footer {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    margin: 20px auto;
-    width: 60vw;
+    justify-content: space-evenly;    
 }
 
 footer img {
@@ -90,16 +115,45 @@ footer img {
 
 .bar {
     position: relative;
-    width: 280px;
-    height: 5px;
+    width: 280px;    
     justify-self: center;
-    border: 3px solid #595757;
+    border: 1px solid #595757;
     margin-top: 10px;    
 }
 
-.time {
-    position: absolute;
+.time {    
     border: 3px solid #000;
     height: 100%;
 }
 
+
+.bar2 {
+    width: 100%;
+    position: relative;
+}
+
+.time-bar {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 10px;
+    background: #848080;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.time-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1px;
+    height: 20px;
+    box-shadow: -400px 0 0 400px #000;
+}
+
+.current-time, .song-duration {
+    font-size: 14px;
+}
+
+.song-duration {
+    position: absolute;
+    right: 0;    
+}
