@@ -1,0 +1,78 @@
+* {
+    font-family: "Cabin", Arial, sans-serif;
+    box-sizing: border-box;
+    scroll-behavior:smooth !important;
+    margin: 0;
+    padding: 0;
+}
+
+.git-name:hover  {
+    color: #A39BAC;
+}
+
+.footer-TRSS:hover, .git-name:hover {
+    filter: invert(68%) sepia(10%) saturate(357%) hue-rotate(226deg) brightness(92%) contrast(86%);
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.player {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    background-color: #645f5f;
+    width: 400px;
+    height: 600px;    
+}
+
+.btn-img, .play-btn {
+    width: 50px;
+    height: 50px;
+    background-color: #645f5f;
+}
+button {
+    border: none;
+    background-color: #645f5f;
+}
+
+button:hover {
+    cursor: pointer;    
+}
+
+.btn-img:hover, .play-btn:hover {
+    background-color: #A39BAC;
+}
+
+.music-name {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 0;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 20px auto;
+    width: 60vw;
+}
+
+footer img {
+    vertical-align: middle;
+    padding-right: 5px;
+}
