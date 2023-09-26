@@ -95,15 +95,16 @@ function formatTime(time) {
 function musicBar(){
     const duration = audio.duration;
     const currTime = audio.currentTime;    
-    timeBar.value = currTime;    
+    timeBar.value = (currTime/duration)*100;    
     songDuration.innerHTML = formatTime(duration);
     timeCurrent.innerHTML = formatTime(currTime);
+    
 };
 
 audio.addEventListener("timeupdate", musicBar);
 
 function changeTime(){
-    audio.currentTime = timeBar.value;    
+    audio.currentTime = timeBar.value/100 * audio.duration;    
 }
 
-timeBar.addEventListener('click', changeTime)
+timeBar.addEventListener('change', changeTime)
