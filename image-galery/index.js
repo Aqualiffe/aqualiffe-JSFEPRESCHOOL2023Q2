@@ -36,13 +36,16 @@ window.addEventListener('load', () => {
 });
 
 buttonIn.addEventListener('click', () => {
-    const  query = document.getElementsByTagName("input")[0].value;    
+    const  query = document.getElementsByTagName("input")[0].value;
+    searchIn.placeholder = 'query';
     fetchData(query);   
  });
 
  searchIn.addEventListener('keydown', (elem) => {
     const query = document.getElementsByTagName("input")[0].value;
     if (elem.key === 'Enter'){
+        searchIn.placeholder = 'query';
         fetchData(query); 
     }
  })
+
