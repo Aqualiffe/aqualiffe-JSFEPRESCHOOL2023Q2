@@ -54,3 +54,7 @@ footer a {
     text-decoration: none;
     cursor: pointer;
 }
+
+button {
+    padding: 2px;
+}

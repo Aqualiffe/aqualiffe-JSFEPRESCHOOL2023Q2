@@ -3,6 +3,8 @@ const galeryConteiner = document.querySelector('.galery-conteiner');
 const searchIn = document.getElementById('search');
 const buttonIn = document.querySelector('.button');
 let state = [];
+const query = 'cat';
+searchIn.focus();
 
 async function fetchData(query) {
     try {
@@ -30,12 +32,17 @@ const setImg = () => {
 };
 
 window.addEventListener('load', () => {
-    fetchData('cat');
+    fetchData(query);
 });
 
 buttonIn.addEventListener('click', () => {
-    query = document.getElementsByTagName("input")[0].value;
-    console.log(query)
-    fetchData(query);
-   
+    const  query = document.getElementsByTagName("input")[0].value;    
+    fetchData(query);   
  });
+
+ searchIn.addEventListener('keydown', (elem) => {
+    const query = document.getElementsByTagName("input")[0].value;
+    if (elem.key === 'Enter'){
+        fetchData(query); 
+    }
+ })
