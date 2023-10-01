@@ -1,5 +1,7 @@
 const AccessKey = 'raq6PABO3x9D7gkPrYxGxWnUqWm9jQhdAkRLpKoF0EE';
 const galeryConteiner = document.querySelector('.galery-conteiner');
+const searchIn = document.getElementById('search');
+const buttonIn = document.querySelector('.button');
 let state = [];
 
 async function fetchData(query) {
@@ -27,8 +29,13 @@ const setImg = () => {
     console.log ("state", state)
 };
 
-fetchData(`cat`);
+window.addEventListener('load', () => {
+    fetchData('cat');
+});
 
-// window.addEventListener('load', () => {
-//     fetchData();
-// });
+buttonIn.addEventListener('click', () => {
+    query = document.getElementsByTagName("input")[0].value;
+    console.log(query)
+    fetchData(query);
+   
+ });
