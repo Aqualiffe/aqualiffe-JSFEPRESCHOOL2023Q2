@@ -8,13 +8,18 @@
 </head>
 <body>
     <main>
-        <h1>Игра в пары</h1>
-        
-        <label for="input">Введите количество пар карточек (от 1 до 18):</label>
-        <input id="count" type="number" min="1" step="1" max="18" placeholder="от 1 до 18" required>
-        <span></span>
-        <button onclick="getNamder()">Отправить</button>
-    
+        <div class="name">
+            <h1>Игра в пары</h1>
+            
+            <label for="input">Введите количество пар карточек (от 1 до 18):</label>
+            <input id="count" type="number" min="1" step="1" max="18" placeholder="от 1 до 18" required>
+            <span></span>
+            <button onclick="getNamder()">Отправить</button>
+        </div>
+        <div class="results">
+            <span>Количество ходов:</span><span class="qt">25</span>
+            <span class="result"></span>
+        </div>
         <div class="game">
             
         </div>
