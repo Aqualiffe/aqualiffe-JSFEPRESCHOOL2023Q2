@@ -1,0 +1,86 @@
+body {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;  
+    
+}
+a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+main {
+    flex-grow: 1;
+    padding: 10px;
+    
+}
+
+input[type="submit"] {
+    margin-left: 10px;
+}
+
+input[type="number"] {
+    margin-left: 5px;
+    background-color: #eee;	
+	outline: none;	
+	width: 75px;
+    height: 25px;
+	box-sizing: border-box;
+	border: 1px solid #ddd;	
+	border-radius: 3px;
+	-moz-appearance: textfield;
+	-webkit-appearance: textfield;
+	appearance: textfield;
+}
+ 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	display: none;
+}
+
+input[type="number"]:invalid+span:after {
+	content: '✖';
+	padding-right: 15px;
+	color: red;
+}
+
+input[type="number"]:valid+span:after {
+	content: '✓';
+	padding-right: 15px;
+	color: green;
+}
+
+.game {   
+    padding: 15px;
+    max-width: 1000px;
+    display: grid;
+    margin: 25px auto;
+    background-color: #b97b34;
+    
+}
+
+
+
+
+
+
+
+footer {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 20px;
+    
+
+}
+
+footer img {
+    vertical-align: middle;
+    padding-right: 5px;
+}
+
+.footer-TRSS:hover, .git-name:hover {
+    filter: invert(68%) sepia(10%) saturate(357%) hue-rotate(226deg) brightness(92%) contrast(86%);
+}

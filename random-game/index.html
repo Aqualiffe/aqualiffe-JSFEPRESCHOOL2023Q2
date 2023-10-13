@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Playing doubles</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <main>
+        <h1>Игра в пары</h1>
+        
+        <label for="input">Введите количество пар карточек (от 1 до 18):</label>
+        <input id="count" type="number" min="1" step="1" max="18" placeholder="от 1 до 18" required>
+        <span></span>
+        <button onclick="getNamder()">Отправить</button>
     
+        <div class="game">
+            
+        </div>
+    </main>
+    <footer>
+        <p>2023</p>
+        <a href="https://rs.school/js-stage0/" target="_blank" class="footer-TRSS"><img src="./svg/rs_school_js.svg" width="121" alt="The Rolling Scopes School"></a>
+        <a href="https://github.com/Aqualiffe" target="_blank" class="git-name"><img src="./svg/github-logo.png" width="30" alt="github.com/Aqualiffe">Aqualiffe</a>
+    </footer>
+    <script src="./game.js"></script>
 </body>
 </html>
