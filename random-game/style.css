@@ -52,19 +52,67 @@ input[type="number"]:valid+span:after {
 }
 
 .game {   
-    padding: 15px;
-    max-width: 1000px;
     display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 15px;
+    max-width: 1000px;    
     margin: 25px auto;
-    background-color: #b97b34;
-    
+
 }
 
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 240px;
+    padding: 30px;
+    color: white;
+    background-color: rgb(112, 112, 112);
+    font-size: 0;
+    color: transparent;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color .3s;
+}
 
+.cards:hover {
+    background-color: rgb(71, 70, 69);
+}
 
+.cards:active {
+    background-color: rgb(71, 70, 69);
+}
 
+.open {
+    font-size: 36px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(4, 46, 5);
+    cursor: default;
+}
 
+.open:hover{
+    background-color: rgb(4, 46, 5);
+}
 
+.open:active{
+    background-color: rgb(4, 46, 5);
+}
+
+.final {
+    font-size: 36px;
+    color: white;
+    background-color: #0a800e;
+    cursor: default;
+}
+
+.final:hover{
+    background-color: #0a800e;
+}
+
+.final:active{
+    background-color: #0a800e;
+}
 
 footer {
     display: flex;

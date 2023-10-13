@@ -1,3 +1,4 @@
+const game = document.querySelector('.game');
 const countArray = [];
 let count = 4;
 
@@ -25,5 +26,10 @@ for (let i = 0; i < countArray.length; i++) {
 //вывод карт
 
 for (const item of countArray) {
-    
+    let card = document.createElement('div');
+    card.textContent = item;
+    card.classList.add("cards")
+    game.append(card)
 }
+
+console.log(game);
