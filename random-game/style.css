@@ -1,0 +1,181 @@
+* {
+    font-family: "Inter", Verdana, sans-serif;
+    box-sizing: border-box; 
+    color: #040e7e;
+}
+
+body {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url(./img/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;    
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+h1 {
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)
+}
+
+main {
+    flex-grow: 1;
+    padding: 10px;    
+}
+
+.name {
+    max-width: 1000px;    
+    margin: 0 auto;
+    padding: 15px;
+}
+
+
+input[type="submit"] {
+    margin-left: 10px;
+}
+
+input[type="number"] {
+    margin-left: 5px;
+    background-color: #eee;	
+	outline: none;	
+	width: 75px;
+    height: 25px;
+	box-sizing: border-box;
+	border: 1px solid #ddd;	
+	border-radius: 3px;
+	-moz-appearance: textfield;
+	-webkit-appearance: textfield;
+	appearance: textfield;
+}
+ 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	display: none;
+}
+
+input[type="number"]:invalid+span:after {
+	content: '✖';
+	padding-right: 15px;
+	color: red;
+}
+
+input[type="number"]:valid+span:after {
+	content: '✓';
+	padding-right: 15px;
+	color: green;
+}
+
+.results {
+    display: flex;
+    gap: 20px;
+    max-width: 1000px;    
+    margin: 0 auto;
+    padding: 15px;  
+}
+
+.result {
+    margin-left: 15px;
+    color: #841818;
+    font-weight: 800;    
+}
+
+.qt {
+    font-weight: 600;
+}
+
+.table-result {
+    max-width: 1000px;    
+    margin: 0 auto;
+    padding: 15px;
+    font-weight: 700;
+}
+
+.game {   
+    display: grid;
+    /* grid-template-columns: repeat(4, 1fr); */
+    gap: 20px;
+    padding: 15px;
+    max-width: 1000px;    
+    margin: 25px auto;
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 240px;
+    padding: 30px;
+    color: white;
+    background-color: rgb(45, 21, 180);
+    font-size: 0;
+    color: transparent;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.min-cards {
+    height: 150px;
+}
+
+.cards:hover {
+    background-color: rgb(13, 63, 133);
+}
+
+.cards:active {
+    background-color: rgb(13, 63, 133);
+}
+
+.open {
+    font-size: 36px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(6, 94, 113);
+    cursor: default;
+}
+
+.open:hover{
+    background-color: rgb(6, 94, 113);
+}
+
+.open:active{
+    background-color: rgb(6, 94, 113);
+}
+
+.final {
+    font-size: 36px;
+    color: white;
+    background-color: #14aaaa;
+    cursor: default;
+}
+
+.final:hover{
+    background-color: #14aaaa;
+}
+
+.final:active{
+    background-color: #14aaaa;
+}
+
+footer {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+
+footer img {
+    vertical-align: middle;
+    padding-right: 5px;
+}
+
+.footer-TRSS:hover, .git-name:hover {
+    filter: invert(68%) sepia(10%) saturate(357%) hue-rotate(226deg) brightness(92%) contrast(86%);
+}
+
