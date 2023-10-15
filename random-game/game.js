@@ -4,6 +4,7 @@ const game = document.querySelector('.game');
 let result = document.querySelector('.result');
 const qtStep = document.querySelector('.qt');
 const tableResalt = document.querySelector('.table-result');
+const audio = new Audio('./mp3/final.mp3');
 let count = 4;
 let step = 0;
 let qtStepArr = [];
@@ -50,6 +51,10 @@ function startGame(game, count) {
         if (count >= 11) {
             card.classList.add("min-cards");
         }  
+        if (count > 18) {
+            tableResalt.innerHTML = `Слишком большое число`;
+            return;
+        }  
 
         card.addEventListener('click', () => {            
             step ++;
@@ -82,6 +87,7 @@ function startGame(game, count) {
             }
             if (countArray.length === document.querySelectorAll('.final').length){                
                 result.innerHTML = 'Победа!';
+                audio.play();
                 game.innerHTML = '';                
                 outputResults(step);
                  
