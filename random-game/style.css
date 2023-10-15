@@ -179,3 +179,20 @@ footer img {
     filter: invert(68%) sepia(10%) saturate(357%) hue-rotate(226deg) brightness(92%) contrast(86%);
 }
 
+@media (max-width: 800px) {
+    .cards {
+        height: 200px;
+    }    
+}
+
+@media (max-width: 800px) {
+    .cards {
+        height: 140px;
+    }    
+}
+
+@media (max-width: 450px) {
+    .cards {
+        height: 80px;
+    }    
+}
