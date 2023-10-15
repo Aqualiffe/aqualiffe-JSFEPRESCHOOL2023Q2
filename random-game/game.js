@@ -31,8 +31,7 @@ function startGame(game, count) {
         column = 5;
     }  
 
-    game.style = `grid-template-columns: repeat(${column}, 1fr);`
-   
+    game.style = `grid-template-columns: repeat(${column}, 1fr);`   
 
     //рандом
     for (let i = 0; i < countArray.length; i++) {
@@ -85,20 +84,25 @@ function startGame(game, count) {
                 result.innerHTML = 'Победа!';
                 game.innerHTML = '';                
                 outputResults(step);
-                
+                 
+                for (let i=0; i < qtStepArr.length; i++) {
+                    if (qtStepArr[i] != step) {
+                        qtStepArr.push(step);                    
+                    }                          
+                }
+
+                console.log(qtStepArr);
             }
             
-            qtStep.innerHTML = step;            
+            qtStep.innerHTML = step; 
+            
+            // localStorage.setItem(step);
             // qtStepArr[] = step;
             // console.log(qtStepArr);
         })        
-        game.append(card)
-        
-    }    
-
-  
+        game.append(card)        
+    } 
 };
-
 
 startGame(game, count);
 
@@ -113,8 +117,6 @@ submitCount.addEventListener('click', () => {
     startGame(game, countNew);
 })
 
-
 function outputResults(step) {
-    tableResalt.innerHTML = `Тут должна быть таблица побед(не вышло): ${step}`;
-    
+    tableResalt.innerHTML = `Тут должна быть таблица побед(не вышло): ${step}`;    
 }
