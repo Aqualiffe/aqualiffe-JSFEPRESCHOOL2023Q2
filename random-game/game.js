@@ -15,6 +15,7 @@ function startGame(game, count) {
     let firstOpen = null;
     let secondOpen = null;
     step = 0;
+    tableResalt.innerHTML = ``;
     //массив
     for (let i = 1; i <= count; i++) {
         countArray.push(i, i);
