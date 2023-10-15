@@ -15,6 +15,7 @@ function startGame(game, count) {
     let firstOpen = null;
     let secondOpen = null;
     step = 0;
+    tableResalt.innerHTML = ``;
     //массив
     for (let i = 1; i <= count; i++) {
         countArray.push(i, i);
@@ -113,8 +114,12 @@ function startGame(game, count) {
 startGame(game, count);
 
 updateGame.addEventListener('click', ()=> {
+    
     game.innerHTML = '';
+    
     startGame(game, count);
+    
+    tableResalt.innerHTML = ``;
 });
 
 submitCount.addEventListener('click', () => {
