@@ -305,7 +305,9 @@ const profileCN = document.querySelector('.profile_CN');
 const inputName = document.querySelector('.inputName');
 const inputCardNumber = document.querySelector('.inputCardNumber');
 const userVisits = document.querySelector('.items-visits');
-
+let favorites = document.querySelector('.Favorites');
+let bookList = document.querySelector('.rented_book_list');
+let qtyBooks = document.querySelector('.items-books')
 
 function loginUser(user) {
 
@@ -327,7 +329,7 @@ function loginUser(user) {
     // console.log(user.auth);
     // console.log(user.visits);
     console.log(user.books);
-    userVisits.textContent = `${user.visits}`
+    userVisits.textContent = user.visits;
     localStorage.setItem(userKey, JSON.stringify(user));
     sessionStorage.setItem('currentUserKey', userKey);
     currentUser = user;
@@ -400,15 +402,11 @@ function restoreSession() {
         }
     } else if (!currentUserKey) {
         console.log('Пожалуйста, войдите в систему');
-        document.querySelector('.Favorites').onclick = function (e) {
+        favorites.onclick = function (e) {
             modalLogin.classList.add('open');
         }
     }
-
-
 }
-
-let bookList = document.querySelector('.rented_book_list');
 
 function renderBookList() {
     // Очищаем список
@@ -421,53 +419,72 @@ function renderBookList() {
             li.textContent = item;
             bookList.append(li);
         }
+        qtyBooks.textContent = currentUser.books.length;
+        console.log(currentUser.books.length);
+
     }
 }
 
 function buyBtn(user) {
     currentUser = user;
-
-    document.querySelector('.Favorites').onclick = function (e) {
+    updateBuyButtons()
+    favorites.onclick = function (e) {
         if (e.target.className != 'book_button') return;
-
         let bookCard = e.target.closest('.favorites-book');
         let bookName = bookCard.querySelector('.book-name').textContent;
         let bookAuthor = bookCard.querySelector('.book-author').textContent;
         let book = `${bookName}, ${bookAuthor.slice(3)}`;
-
         if (!currentUser.books.includes(book)) {
             currentUser.books.push(book);
-
             const userKey = `user_${currentUser.cardNumber}`;
             localStorage.setItem(userKey, JSON.stringify(currentUser));
             sessionStorage.setItem('currentUserKey', userKey);
-
             renderBookList();
-
+              e.target.disabled = true;
+            e.target.textContent = 'Own';
+            e.target.style.cursor = 'not-allowed';
             console.log('Добавлена книга:', book);
         } else {
             console.log('Книга уже есть в списке');
         }
     };
 
-//удаление
+    //удаление
     bookList.onclick = function (e) {
         if (e.target.classList.contains('rented_book_item')) {
             let bookText = e.target.textContent;
             let index = currentUser.books.indexOf(bookText);
-
             if (currentUser.books.includes(bookText)) {
                 currentUser.books.splice(index, 1);
                 const userKey = `user_${currentUser.cardNumber}`;
                 localStorage.setItem(userKey, JSON.stringify(currentUser));
                 sessionStorage.setItem('currentUserKey', userKey);
                 renderBookList();
+                updateBuyButtons();
                 console.log('Удалена книга:', bookText);
-
             }
         }
     };
-
     renderBookList();
 }
 
+
+//кнопки buy
+function updateBuyButtons() {
+    const buyButtons = favorites.querySelectorAll('.book_button');
+    buyButtons.forEach(button => {
+        const bookCard = button.closest('.favorites-book');
+        const bookName = bookCard.querySelector('.book-name').textContent;
+        const bookAuthor = bookCard.querySelector('.book-author').textContent;
+        const book = `${bookName}, ${bookAuthor.slice(3)}`;
+        if (currentUser && currentUser.books.includes(book)) {
+            button.disabled = true;
+            button.textContent = 'Own';
+            button.style.cursor = 'not-allowed';
+        } else {
+            button.disabled = false;
+            button.textContent = 'Buy';
+            button.style.cursor = 'pointer';
+        }
+    });
+}

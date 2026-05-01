@@ -513,7 +513,7 @@ h3 {
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 1px;
-    word-wrap: break-word;
+
     transition-duration: 0.3s;
     cursor: pointer;
 }
@@ -533,7 +533,7 @@ h3 {
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 1px;
-    word-wrap: break-word
+
 }
 
 .book-name {
