@@ -91,9 +91,6 @@
     display: none;
     cursor: pointer;
     z-index: 3;
-
-
-
 }
 
 .modal.open {
@@ -286,7 +283,8 @@
     justify-content: center;
     align-items: center;
     width: 120px;
-    height: 30px;
+    min-height: 30px;
+    height: auto;
     flex-shrink: 0;
     background: #FFF;
     text-align: center;
@@ -302,6 +300,10 @@
     line-height: 20px;
     /* 100% */
     text-transform: capitalize;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    max-width: 100%;
 }
 
 .my-profile-box {
@@ -328,7 +330,8 @@
 
 .profile-box {
     margin-left: 20px;
-    margin-bottom: 39px;
+    margin-bottom: 9px;
+    height: 100%;
 }
 
 .card-profile {
@@ -372,6 +375,8 @@
 
 .rented_book {
     display: block;
+    height: auto;
+    min-height: 130px;
 }
 
 .rented-books-name {
@@ -387,8 +392,11 @@
 .rented_book_list {
     display: flex;
     flex-direction: column;
-    margin-left: 31px;
+    margin-left: 10px;
     gap: 10px;
+    height: 90px;
+    overflow-y: auto;
+    padding-left: 20px;
 }
 
 .rented_book_item {
@@ -410,7 +418,7 @@
     width: 281px;
     height: 20px;
     gap: 15px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .text_card-number {

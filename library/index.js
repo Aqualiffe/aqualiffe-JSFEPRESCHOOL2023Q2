@@ -82,13 +82,24 @@ const modalControler = ({ modalElem, btnOpen, btnClose, activModal }) => {
         const clickButtonClose = e.composedPath().includes(buttonModalClose);
         if (clickButtonOpen) {
             modal.classList.add("open");
+            setTimeout(() => {
+                if (modal.classList.contains('open') && modalElem === '.modalProfile') {
+                    renderBookList();
+                }
+            }, 100);
         } else if (!clickModalLogIn & !clickLogo & !profileLogo & !clickMenu || clickButtonClose) {
             modal.classList.remove('open');
+            setTimeout(() => {
+            if (modal.classList.contains('open') && modalElem === '.modalProfile') {
+                renderBookList();
+            }
+        }, 100);
         }
     };
 
     const openModal = function () {
         modal.classList.add("open");
+
     };
 
     document.addEventListener('click', closeModal);
@@ -399,6 +410,7 @@ function restoreSession() {
             loginUser(user);
             console.log(currentUser);
             buyBtn(user)
+            renderBookList();
         }
     } else if (!currentUserKey) {
         console.log('Пожалуйста, войдите в систему');
@@ -421,8 +433,8 @@ function renderBookList() {
         }
         qtyBooks.textContent = currentUser.books.length;
         console.log(currentUser.books.length);
-
     }
+checkScrollbar();
 }
 
 function buyBtn(user) {
@@ -439,8 +451,7 @@ function buyBtn(user) {
             const userKey = `user_${currentUser.cardNumber}`;
             localStorage.setItem(userKey, JSON.stringify(currentUser));
             sessionStorage.setItem('currentUserKey', userKey);
-            renderBookList();
-              e.target.disabled = true;
+            e.target.disabled = true;
             e.target.textContent = 'Own';
             e.target.style.cursor = 'not-allowed';
             console.log('Добавлена книга:', book);
@@ -465,8 +476,9 @@ function buyBtn(user) {
             }
         }
     };
-    renderBookList();
 }
+const buyButtons = favorites.querySelectorAll('.book_button');
+console.log(buyButtons);
 
 
 //кнопки buy
@@ -487,4 +499,25 @@ function updateBuyButtons() {
             button.style.cursor = 'pointer';
         }
     });
+}
+
+function checkScrollbar() {
+    const list = document.querySelector('.rented_book_list');
+    if (list) {
+        const hasScrollbar = list.scrollHeight > 91;
+        console.log('checkScrollbar вызван');
+        console.log('scrollHeight:', list.scrollHeight);
+        console.log('clientHeight:', list.clientHeight);
+        console.log('hasScrollbar:', hasScrollbar);
+
+        if (!hasScrollbar) {
+            list.style.overflowY = 'hidden';
+            console.log('Скрываем скролл');
+        } else {
+            list.style.overflowY = 'auto';
+            console.log('Показываем скролл');
+        }
+    } else {
+        console.log('Список не найден');
+    }
 }
